@@ -1,8 +1,8 @@
 ---
-name: Tails Azimuth
+name: Anna Skryd
 avatar: /static/images/avatar.png
-occupation: Professor of Atmospheric Science
-company: Stanford University
+occupation: Apartment Chef
+company: Cooking Inspo With Anna
 email: address@yoursite.com
 twitter: https://twitter.com/Twitter
 linkedin: https://www.linkedin.com
