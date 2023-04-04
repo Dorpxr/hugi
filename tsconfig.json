@@ -22,6 +22,12 @@
     "resolveJsonModule": true,
     "isolatedModules": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "lib/mdx.ts",
+    "components/analytics/GoogleAnalytics.js"
+  ],
   "exclude": ["node_modules"]
 }

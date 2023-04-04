@@ -23,5 +23,6 @@ export default PlausibleScript
 
 // https://plausible.io/docs/custom-event-goals
 export const logEvent = (eventName, ...rest) => {
+  // @ts-ignore
   return window.plausible?.(eventName, ...rest)
 }

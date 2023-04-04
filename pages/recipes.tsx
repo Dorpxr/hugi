@@ -1,8 +1,8 @@
 import siteMetadata from '@/data/siteMetadata'
 import ListLayout from '@/layouts/ListLayout'
 import { PageSEO } from '@/components/SEO'
-import { getAllPostsFrontMatter } from '@/lib/utils/notion/getOps'
-import { databaseId } from '@/lib/utils/notion/client'
+import { getAllPostsFrontMatter } from '@/lib/notion/getOps'
+import { databaseId } from '@/lib/notion/client'
 
 export const POSTS_PER_PAGE = 5
 

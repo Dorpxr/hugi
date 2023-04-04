@@ -1,7 +1,7 @@
 import { PageSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
-import { databaseId } from '@/lib/utils/notion/client'
-import { getDatabase } from '@/lib/utils/notion/getOps'
+import { databaseId } from '@/lib/notion/client'
+import { getDatabase } from '@/lib/notion/getOps'
 import ListLayout from '@/layouts/ListLayout'
 
 export async function getStaticPaths() {

@@ -1,5 +1,5 @@
-import { RecipesDatabase } from '@/lib/utils/notion/interfaces/recipesDatabase.interface'
-import { RecipePage } from '@/lib/utils/notion/interfaces/recipePage.interface'
+import { RecipesDatabase } from '@/lib/notion/interfaces/recipesDatabase.interface'
+import { RecipePage } from '@/lib/notion/interfaces/recipePage.interface'
 import { notionClient } from './client'
 import fs from 'fs'
 import { PageMetaData } from './interfaces/recipePageMetaData.interface'

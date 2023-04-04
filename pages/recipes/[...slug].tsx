@@ -1,9 +1,9 @@
-import { databaseId, notionClient } from '@/lib/utils/notion/client'
+import { databaseId, notionClient } from '@/lib/notion/client'
 import PageTitle from '@/components/PageTitle'
 import { MDXLayoutRenderer } from '@/components/MDXComponents'
 import { processContent } from '@/lib/mdx'
 import { NotionToMarkdown } from 'notion-to-md'
-import { getDatabase, getPage } from '@/lib/utils/notion/getOps'
+import { getDatabase, getPage } from '@/lib/notion/getOps'
 
 const DEFAULT_LAYOUT = 'PostLayout'
 

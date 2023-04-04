@@ -16,8 +16,10 @@ const SimpleAnalyticsScript = () => {
 // https://docs.simpleanalytics.com/events
 export const logEvent = (eventName, callback) => {
   if (callback) {
+    // @ts-ignore
     return window.sa_event?.(eventName, callback)
   } else {
+    // @ts-ignore
     return window.sa_event?.(eventName)
   }
 }

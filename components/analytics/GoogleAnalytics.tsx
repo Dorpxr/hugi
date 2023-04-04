@@ -28,6 +28,7 @@ export default GAScript
 
 // https://developers.google.com/analytics/devguides/collection/gtagjs/events
 export const logEvent = (action, category, label, value) => {
+  // @ts-ignore
   window.gtag?.('event', action, {
     event_category: category,
     event_label: label,
