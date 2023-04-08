@@ -4,6 +4,7 @@ import { MDXLayoutRenderer } from '@/components/MDXComponents'
 import { processContent } from '@/lib/mdx'
 import { NotionToMarkdown } from 'notion-to-md'
 import { getDatabase, getPage } from '@/lib/notion/getOps'
+import generateRss from '@/lib/generate-rss'
 
 const DEFAULT_LAYOUT = 'PostLayout'
 
@@ -26,9 +27,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params: { slug } }) {
   const pageId = slug.toString().split('-').pop()
-
   const page = await getPage(pageId)
-
   const content = await n2m.pageToMarkdown(pageId)
   const contentString = await n2m.toMarkdownString(content)
   const processedContent = await processContent(contentString)
