@@ -3,8 +3,19 @@ import Tag from '@/components/Tag'
 import { useState } from 'react'
 import Pagination from '@/components/Pagination'
 import formatDate from '@/lib/utils/formatDate'
+import { PageMetaData } from '@/lib/notion/interfaces/recipePageMetaData.interface'
 
-export default function ListLayout({ posts, title, initialDisplayPosts = [], pagination }) {
+interface Props {
+  posts: PageMetaData[]
+  title: string
+  initialDisplayPosts?: PageMetaData[]
+  pagination?: {
+    currentPage: number
+    totalPages: number
+  }
+}
+
+export default function ListLayout({ posts, title, initialDisplayPosts = [], pagination }: Props) {
   const [searchValue, setSearchValue] = useState('')
   const filteredBlogPosts = posts.filter((frontMatter) => {
     const searchContent = frontMatter.title + frontMatter.summary + frontMatter.tags.join(' ')

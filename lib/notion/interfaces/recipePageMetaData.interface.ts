@@ -4,4 +4,6 @@ export interface PageMetaData {
   status: string
   createdAt: string
   slug: string
+  reelImage: string
+  summary: string
 }

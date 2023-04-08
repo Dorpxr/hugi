@@ -1,5 +1,5 @@
 import siteMetadata from '@/data/siteMetadata'
-import ListLayout from '@/layouts/ListLayout'
+import ReelLinksLayout from '@/layouts/ReelLinksLayout'
 import { PageSEO } from '@/components/SEO'
 import { getAllPostsFrontMatter } from '@/lib/notion/getOps'
 import { databaseId } from '@/lib/notion/client'
@@ -17,15 +17,17 @@ export async function getStaticProps() {
   return { props: { initialDisplayPosts, posts, pagination } }
 }
 
-export default function Recipes({ posts, initialDisplayPosts, pagination }) {
+export default function ReelLinks({ posts, initialDisplayPosts, pagination }) {
   return (
     <>
-      <PageSEO title={`Recipes - ${siteMetadata.author}`} description={siteMetadata.description} />
-      <ListLayout
+      <PageSEO
+        title={`Reel Links - ${siteMetadata.author}`}
+        description={siteMetadata.description}
+      />
+      <ReelLinksLayout
         posts={posts}
         initialDisplayPosts={initialDisplayPosts}
         pagination={pagination}
-        title="All Recipes"
       />
     </>
   )

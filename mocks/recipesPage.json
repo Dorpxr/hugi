@@ -1,8 +1,8 @@
 {
   "object": "page",
-  "id": "ed458c3c-4339-446c-88be-1d10963071ce",
-  "created_time": "2023-04-03T21:25:00.000Z",
-  "last_edited_time": "2023-04-04T16:51:00.000Z",
+  "id": "7774d3d1-6b2d-4a16-abd6-a4fd969d4cea",
+  "created_time": "2023-04-04T20:49:00.000Z",
+  "last_edited_time": "2023-04-05T00:35:00.000Z",
   "created_by": {
     "object": "user",
     "id": "fb7fee1b-4867-4a4f-8d15-175ea8a1692d"
@@ -19,6 +19,43 @@
   },
   "archived": false,
   "properties": {
+    "Summary": {
+      "id": "%3Fvhq",
+      "type": "rich_text",
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Flank steak with good sauce.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Flank steak with good sauce.",
+          "href": null
+        }
+      ]
+    },
+    "ReelImage": {
+      "id": "Ls%7DE",
+      "type": "files",
+      "files": [
+        {
+          "name": "IMG_5487.jpeg",
+          "type": "file",
+          "file": {
+            "url": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b5083200-1d02-4b9d-ac70-6db2a06d9205/IMG_5487.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230408%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230408T011309Z&X-Amz-Expires=3600&X-Amz-Signature=ad1f71fd27d6881c0cb038aa68c53e7e465d2d2940c8afdfa29cfff7f6427973&X-Amz-SignedHeaders=host&x-id=GetObject",
+            "expiry_time": "2023-04-08T02:13:09.270Z"
+          }
+        }
+      ]
+    },
     "Status": {
       "id": "WvHt",
       "type": "status",
@@ -33,9 +70,9 @@
       "type": "multi_select",
       "multi_select": [
         {
-          "id": "2a250f8c-cb71-4f79-807f-f6dd645c85bd",
-          "name": "dessert",
-          "color": "purple"
+          "id": "b90a48a6-9a13-4773-9cce-c55e7defdd33",
+          "name": "steak",
+          "color": "red"
         }
       ]
     },
@@ -46,7 +83,7 @@
         {
           "type": "text",
           "text": {
-            "content": "Healthy Icecream",
+            "content": "Gochujang Flank Steak",
             "link": null
           },
           "annotations": {
@@ -57,11 +94,11 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "Healthy Icecream",
+          "plain_text": "Gochujang Flank Steak",
           "href": null
         }
       ]
     }
   },
-  "url": "https://www.notion.so/Healthy-Icecream-ed458c3c4339446c88be1d10963071ce"
+  "url": "https://www.notion.so/Gochujang-Flank-Steak-7774d3d16b2d4a16abd6a4fd969d4cea"
 }

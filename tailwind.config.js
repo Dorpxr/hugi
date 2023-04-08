@@ -6,15 +6,18 @@ module.exports = {
     optimizeUniversalDefaults: true,
   },
   content: [
-    './pages/**/*.(js|ts|jsx|tsx)',
-    './components/**/*.(js|ts|jsx|tsx)',
-    './layouts/**/*.(js|ts|jsx|tsx)',
-    './lib/**/*.(js|ts|jsx|tsx)',
+    './pages/**/*.tsx',
+    './components/**/*.tsx',
+    './layouts/**/*.tsx',
+    './lib/**/*.ts',
     './data/**/*.mdx',
   ],
   darkMode: 'class',
   theme: {
     extend: {
+      aspectRatio: {
+        '3/4': '3 / 4',
+      },
       spacing: {
         '9/16': '56.25%',
       },

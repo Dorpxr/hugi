@@ -26,6 +26,8 @@ export interface Parent {
 }
 
 export interface Properties {
+  Summary: Summary
+  ReelImage: ReelImage
   Status: Status
   Tags: Tags
   Post: Post
@@ -59,6 +61,23 @@ export interface Text {
   link: null
 }
 
+export interface ReelImage {
+  id: string
+  type: string
+  files: FileElement[]
+}
+
+export interface FileElement {
+  name: string
+  type: string
+  file: FileFile
+}
+
+export interface FileFile {
+  url: string
+  expiry_time: string
+}
+
 export interface Status {
   id: string
   type: string
@@ -69,6 +88,12 @@ export interface StatusElement {
   id: string
   name: string
   color: string
+}
+
+export interface Summary {
+  id: string
+  type: string
+  rich_text: Title[]
 }
 
 export interface Tags {

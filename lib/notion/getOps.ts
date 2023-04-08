@@ -46,6 +46,8 @@ export async function getAllPostsFrontMatter(databaseId: string): Promise<PageMe
           page.id.replaceAll('-', ''),
         tags: page.properties.Tags.multi_select.map((tag) => tag.name),
         status: page.properties.Status.status.name,
+        reelImage: page.properties.ReelImage.files[0].file.url,
+        summary: page.properties.Summary.rich_text[0].plain_text,
       })
     }
   }
