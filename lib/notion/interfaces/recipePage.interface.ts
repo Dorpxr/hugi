@@ -27,10 +27,34 @@ export interface Parent {
 
 export interface Properties {
   Summary: Summary
-  ReelImage: ReelImage
   Status: Status
+  FeatureImage: FeatureImage
+  CookTime: CookTime
   Tags: Tags
   Post: Post
+}
+
+export interface CookTime {
+  id: string
+  type: string
+  number: number
+}
+
+export interface FeatureImage {
+  id: string
+  type: string
+  files: FileElement[]
+}
+
+export interface FileElement {
+  name: string
+  type: string
+  file: FileFile
+}
+
+export interface FileFile {
+  url: string
+  expiry_time: string
 }
 
 export interface Post {
@@ -59,23 +83,6 @@ export interface Annotations {
 export interface Text {
   content: string
   link: null
-}
-
-export interface ReelImage {
-  id: string
-  type: string
-  files: FileElement[]
-}
-
-export interface FileElement {
-  name: string
-  type: string
-  file: FileFile
-}
-
-export interface FileFile {
-  url: string
-  expiry_time: string
 }
 
 export interface Status {

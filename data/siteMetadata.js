@@ -1,7 +1,7 @@
 const siteMetadata = {
   title: 'Cooking Inspo With Anna',
   author: 'Anna Skryd',
-  headerTitle: 'CIWA',
+  headerTitle: 'Cooking Inspo with Anna',
   description: 'Food and Recipes from Anna Skryd',
   language: 'en-us',
   theme: 'system', // system, dark or light

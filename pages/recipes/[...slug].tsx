@@ -4,13 +4,13 @@ import { MDXLayoutRenderer } from '@/components/MDXComponents'
 import { processContent } from '@/lib/mdx'
 import { NotionToMarkdown } from 'notion-to-md'
 import { getDatabase, getPage } from '@/lib/notion/getOps'
-import generateRss from '@/lib/generate-rss'
+import { GetStaticPaths } from 'next'
 
 const DEFAULT_LAYOUT = 'PostLayout'
 
 const n2m = new NotionToMarkdown({ notionClient })
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   const results = await getDatabase(databaseId)
 
   return {
