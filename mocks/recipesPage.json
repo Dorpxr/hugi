@@ -59,8 +59,8 @@
           "name": "BEAFF990-264D-45AC-BF07-221DD8E072D7.jpeg",
           "type": "file",
           "file": {
-            "url": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/eb5b264e-0866-44f3-954c-3a78c05f28ed/BEAFF990-264D-45AC-BF07-221DD8E072D7.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230612%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230612T225808Z&X-Amz-Expires=3600&X-Amz-Signature=77d27b087c467dfe25c94d920e8176fa1d47082b7ab829e49c9cbcdd8a687286&X-Amz-SignedHeaders=host&x-id=GetObject",
-            "expiry_time": "2023-06-12T23:58:08.377Z"
+            "url": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/eb5b264e-0866-44f3-954c-3a78c05f28ed/BEAFF990-264D-45AC-BF07-221DD8E072D7.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230613%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230613T011915Z&X-Amz-Expires=3600&X-Amz-Signature=77c1793041db47969866b823dbf868ff0f870a40505093dc8e83d46d6ead9921&X-Amz-SignedHeaders=host&x-id=GetObject",
+            "expiry_time": "2023-06-13T02:19:15.270Z"
           }
         }
       ]

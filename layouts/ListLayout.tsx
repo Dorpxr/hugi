@@ -5,6 +5,7 @@ import Pagination from '@/components/Pagination'
 import { PageMetaData } from '@/lib/notion/interfaces/recipePageMetaData.interface'
 import AppIcon from '@/components/app-icons'
 import { formatTime } from '@/lib/utils/formatTime'
+import Card from '@/components/Card'
 
 interface Props {
   posts: PageMetaData[]
@@ -29,9 +30,9 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
 
   return (
     <>
-      <div className="divide-y divide-gray-200 dark:divide-gray-700">
-        <div className="space-y-2 pt-6 pb-8 md:space-y-5">
-          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+      <div>
+        <div className="border-b border-neutral-400 pb-6 dark:border-neutral-300">
+          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 md:text-3xl md:leading-14">
             {title}
           </h1>
           <div className="relative max-w-lg">
@@ -58,37 +59,20 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
             </svg>
           </div>
         </div>
-        <ul className="flex flex-wrap pt-6">
+        <ul className="grid grid-cols-1 gap-4 pt-6 md:grid-cols-3">
           {!filteredBlogPosts.length && 'No recipes found.'}
           {displayPosts.map((frontMatter) => {
             const { slug, title, tags, featureImage, cookTime } = frontMatter
             return (
-              <li key={slug} className="w-full md:w-1/3">
-                <article className="h-full p-2">
-                  <div className="overflow-hidden rounded-lg border border-gray-300 shadow-lg dark:border-gray-600 dark:shadow-gray-700/30">
-                    <img src={featureImage} />
-                    <div className="flex h-24 flex-col justify-between px-3 pb-2 pt-1">
-                      <h3 className="text-lg font-bold leading-8 tracking-tight">
-                        <Link
-                          href={`/recipes/${slug}`}
-                          className="text-gray-900 dark:text-gray-100"
-                        >
-                          {title}
-                        </Link>
-                      </h3>
-                      <div className="flex justify-between">
-                        <div className="flex flex-wrap">
-                          {tags.map((tag) => (
-                            <Tag key={tag} text={tag} />
-                          ))}
-                        </div>
-                        <div className="flex text-gray-500 dark:text-gray-400">
-                          <AppIcon kind="clock" size={5} />
-                          <p className="pl-1 text-sm uppercase">{formatTime(cookTime)}</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+              <li key={slug} className="w-full">
+                <article className="h-full">
+                  <Card
+                    title={title}
+                    imgSrc={featureImage}
+                    href={slug}
+                    tags={tags}
+                    cookTime={cookTime}
+                  />
                 </article>
               </li>
             )
