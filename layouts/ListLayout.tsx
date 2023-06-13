@@ -64,10 +64,10 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
             const { slug, title, tags, featureImage, cookTime } = frontMatter
             return (
               <li key={slug} className="w-full md:w-1/3">
-                <article className="p-2">
+                <article className="h-full p-2">
                   <div className="overflow-hidden rounded-lg border border-gray-300 shadow-lg dark:border-gray-600 dark:shadow-gray-700/30">
                     <img src={featureImage} />
-                    <div className="px-3 pb-2 pt-1">
+                    <div className="flex h-24 flex-col justify-between px-3 pb-2 pt-1">
                       <h3 className="text-lg font-bold leading-8 tracking-tight">
                         <Link
                           href={`/recipes/${slug}`}
