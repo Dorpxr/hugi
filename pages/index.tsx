@@ -40,7 +40,7 @@ export default function Home({ posts }) {
             </div>
           )}
         </div>
-        <ul className="grid grid-cols-1 gap-4 pt-6 md:grid-cols-3">
+        <ul className="grid grid-cols-3 gap-4 overflow-x-auto pt-6 md:overflow-x-scroll">
           {!posts.length && 'No posts found.'}
           {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
             const { slug, title, featureImage, tags, cookTime } = frontMatter
