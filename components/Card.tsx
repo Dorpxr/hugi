@@ -7,7 +7,7 @@ const Card = ({ title, imgSrc, href, tags, cookTime }) => (
   <div className="overflow-hidden rounded-lg">
     <img src={imgSrc} />
     <div className="flex h-24 flex-col justify-between rounded-b-lg border border-gray-400 px-3 pb-2 pt-1 dark:border-gray-600">
-      <h3 className="text-lg font-bold leading-8 tracking-tight">
+      <h3 className="text-sm font-bold md:text-lg">
         <Link href={`${href}`} className="text-gray-900 dark:text-gray-100">
           {title}
         </Link>

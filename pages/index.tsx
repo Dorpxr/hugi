@@ -40,25 +40,27 @@ export default function Home({ posts }) {
             </div>
           )}
         </div>
-        <ul className="grid grid-cols-3 gap-4 overflow-x-auto pt-6 md:overflow-x-scroll">
-          {!posts.length && 'No posts found.'}
-          {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
-            const { slug, title, featureImage, tags, cookTime } = frontMatter
-            return (
-              <li key={slug} className="w-full">
-                <article className="h-full">
-                  <Card
-                    title={title}
-                    imgSrc={featureImage}
-                    href={slug}
-                    tags={tags}
-                    cookTime={cookTime}
-                  />
-                </article>
-              </li>
-            )
-          })}
-        </ul>
+        <div>
+          <ul className="flex overflow-x-scroll pt-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:overflow-x-auto">
+            {!posts.length && 'No posts found.'}
+            {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
+              const { slug, title, featureImage, tags, cookTime } = frontMatter
+              return (
+                <li key={slug} className="min-w-[70%] pr-4 sm:min-w-0 sm:pr-0 md:w-full">
+                  <article className="h-full">
+                    <Card
+                      title={title}
+                      imgSrc={featureImage}
+                      href={slug}
+                      tags={tags}
+                      cookTime={cookTime}
+                    />
+                  </article>
+                </li>
+              )
+            })}
+          </ul>
+        </div>
         <HeroBlurb />
       </div>
     </>
