@@ -2,7 +2,7 @@ import Document, { Html, Head, Main, NextScript } from 'next/document'
 class MyDocument extends Document {
   render() {
     return (
-      <Html lang="en" className="w-screen overflow-x-hidden scroll-smooth">
+      <Html lang="en" className="relative w-screen overflow-x-hidden scroll-smooth">
         <Head>
           <link rel="apple-touch-icon" sizes="76x76" href="/static/favicons/apple-touch-icon.png" />
           <link
