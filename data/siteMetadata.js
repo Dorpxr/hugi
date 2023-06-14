@@ -1,8 +1,8 @@
 const siteMetadata = {
-  title: 'Cooking Inspo With Anna',
+  title: 'Gud Eats',
   author: 'Anna Skryd',
-  headerTitle: 'Cooking Inspo with Anna',
-  description: 'Food and Recipes from Anna Skryd',
+  headerTitle: 'Gud Eats',
+  description: 'Food and Recipes from Gud Eats',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
