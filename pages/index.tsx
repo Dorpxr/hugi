@@ -51,7 +51,7 @@ export default function Home({ posts }) {
                     <Card
                       title={title}
                       imgSrc={featureImage}
-                      href={slug}
+                      href={`/recipes/${slug}`}
                       tags={tags}
                       cookTime={cookTime}
                     />

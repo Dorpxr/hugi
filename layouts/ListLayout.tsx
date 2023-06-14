@@ -69,7 +69,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                   <Card
                     title={title}
                     imgSrc={featureImage}
-                    href={slug}
+                    href={`/recipes/${slug}`}
                     tags={tags}
                     cookTime={cookTime}
                   />
