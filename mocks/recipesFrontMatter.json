@@ -6,7 +6,7 @@
     "tags": ["steak"],
     "status": "Done",
     "summary": "Flank steak with good sauce.",
-    "featureImage": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/baf99b6c-c1a1-48b7-b3b3-841253a0dfda/C93AD4B6-9DB5-4A33-9FAC-FE2876DDCF0E.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230614%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230614T123152Z&X-Amz-Expires=3600&X-Amz-Signature=68dadd76ae7ee3bdafc3ab9844813086362980f33a33481ba0ccf4c53d52611d&X-Amz-SignedHeaders=host&x-id=GetObject",
+    "featureImage": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/baf99b6c-c1a1-48b7-b3b3-841253a0dfda/C93AD4B6-9DB5-4A33-9FAC-FE2876DDCF0E.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230614%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230614T125612Z&X-Amz-Expires=3600&X-Amz-Signature=cc0e8703a83809a49cc1382ce7d614e22554ec014a8b27f9a4a558da7db96d5a&X-Amz-SignedHeaders=host&x-id=GetObject",
     "cookTime": 150
   },
   {
@@ -16,7 +16,7 @@
     "tags": ["chicken"],
     "status": "Done",
     "summary": "Delicious lemon garlic herb chicken thighs.",
-    "featureImage": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/eb5b264e-0866-44f3-954c-3a78c05f28ed/BEAFF990-264D-45AC-BF07-221DD8E072D7.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230614%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230614T123152Z&X-Amz-Expires=3600&X-Amz-Signature=d59c5e4e06b3d0758b6172c3a49b031a9a83b302c41969df3c3f909d6055dc86&X-Amz-SignedHeaders=host&x-id=GetObject",
+    "featureImage": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/eb5b264e-0866-44f3-954c-3a78c05f28ed/BEAFF990-264D-45AC-BF07-221DD8E072D7.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230614%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230614T125612Z&X-Amz-Expires=3600&X-Amz-Signature=5fe242e110a3f95eae8b35b2cf28a24c0ddd227c3c03ea36a207896d23267389&X-Amz-SignedHeaders=host&x-id=GetObject",
     "cookTime": 120
   },
   {
@@ -26,7 +26,7 @@
     "tags": ["gluten-free"],
     "status": "Done",
     "summary": "Yummy cheesy goodles.",
-    "featureImage": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/e3a29739-e88c-4465-9630-6c6d51eedef2/4CCD1E50-17ED-42CA-9031-C5F5A641D067.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230614%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230614T123152Z&X-Amz-Expires=3600&X-Amz-Signature=b39631604897c02668fba5a2e353cecc4640971aa7e520272f8a9d2606efe80a&X-Amz-SignedHeaders=host&x-id=GetObject",
+    "featureImage": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/e3a29739-e88c-4465-9630-6c6d51eedef2/4CCD1E50-17ED-42CA-9031-C5F5A641D067.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230614%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230614T125612Z&X-Amz-Expires=3600&X-Amz-Signature=3745d8fb560f0fc45b36c26d068cb7182d5b30a516d035220c3359c87fed9e9c&X-Amz-SignedHeaders=host&x-id=GetObject",
     "cookTime": 15
   },
   {
@@ -36,7 +36,7 @@
     "tags": ["dessert"],
     "status": "Done",
     "summary": "Healthy icecream made with cottage cheese.",
-    "featureImage": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/eedc2f63-fcd1-4e71-a9f9-83376465c46f/2BC48B4C-B03A-481F-94FA-B75C0D3A6910.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230614%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230614T123152Z&X-Amz-Expires=3600&X-Amz-Signature=605bab7a9d7e217fe359730127244bff04be7a595e68458875f14684776c75b0&X-Amz-SignedHeaders=host&x-id=GetObject",
+    "featureImage": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/eedc2f63-fcd1-4e71-a9f9-83376465c46f/2BC48B4C-B03A-481F-94FA-B75C0D3A6910.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230614%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230614T125612Z&X-Amz-Expires=3600&X-Amz-Signature=ba831d2c4c90465b9b0e7c897c822e3fe8a4e4ad0c863c029e2b597e7f9f7b0b&X-Amz-SignedHeaders=host&x-id=GetObject",
     "cookTime": 30
   }
 ]

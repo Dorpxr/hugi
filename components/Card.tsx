@@ -2,12 +2,15 @@ import { formatTime } from '@/lib/utils/formatTime'
 import Link from './Link'
 import Tag from './Tag'
 import AppIcon from './app-icons'
+import Image from 'next/image'
 
 const Card = ({ title, imgSrc, href, tags, cookTime }) => (
   <div className="overflow-hidden rounded-lg">
-    <img src={imgSrc} />
-    <div className="flex h-24 flex-col justify-between rounded-b-lg border border-gray-400 px-3 pb-2 pt-1 dark:border-gray-600">
-      <h3 className="text-sm font-bold md:text-lg">
+    <div className="relative">
+      <Image src={imgSrc} width={960} height={540} alt={title} />
+    </div>
+    <div className="flex h-24 flex-col justify-between pb-2 dark:border-gray-600">
+      <h3 className="text-base font-bold md:text-lg">
         <Link href={`${href}`} className="text-gray-900 dark:text-gray-100">
           {title}
         </Link>
