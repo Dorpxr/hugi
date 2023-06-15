@@ -1,8 +1,8 @@
 {
   "object": "page",
-  "id": "7774d3d1-6b2d-4a16-abd6-a4fd969d4cea",
-  "created_time": "2023-04-04T20:49:00.000Z",
-  "last_edited_time": "2023-04-18T00:13:00.000Z",
+  "id": "42e9d10f-048e-4b01-a10c-9db9dc9575ff",
+  "created_time": "2023-04-04T20:47:00.000Z",
+  "last_edited_time": "2023-06-11T22:36:00.000Z",
   "created_by": {
     "object": "user",
     "id": "fb7fee1b-4867-4a4f-8d15-175ea8a1692d"
@@ -26,7 +26,7 @@
         {
           "type": "text",
           "text": {
-            "content": "Flank steak with good sauce.",
+            "content": "Delicious lemon garlic herb chicken thighs.",
             "link": null
           },
           "annotations": {
@@ -37,7 +37,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "Flank steak with good sauce.",
+          "plain_text": "Delicious lemon garlic herb chicken thighs.",
           "href": null
         }
       ]
@@ -56,11 +56,11 @@
       "type": "files",
       "files": [
         {
-          "name": "C93AD4B6-9DB5-4A33-9FAC-FE2876DDCF0E.jpeg",
+          "name": "BEAFF990-264D-45AC-BF07-221DD8E072D7.jpeg",
           "type": "file",
           "file": {
-            "url": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/baf99b6c-c1a1-48b7-b3b3-841253a0dfda/C93AD4B6-9DB5-4A33-9FAC-FE2876DDCF0E.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230615%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230615T000510Z&X-Amz-Expires=3600&X-Amz-Signature=970d365fb6efffe5fd8c7ec4bc984f0815588092f9330cc9c813d6d4e35adb09&X-Amz-SignedHeaders=host&x-id=GetObject",
-            "expiry_time": "2023-06-15T01:05:08.883Z"
+            "url": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/eb5b264e-0866-44f3-954c-3a78c05f28ed/BEAFF990-264D-45AC-BF07-221DD8E072D7.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230615%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230615T000910Z&X-Amz-Expires=3600&X-Amz-Signature=aee4264b5e77092bcad84ec81225edadda5f4ac960cc04ad8aefe8bc4b505e2f&X-Amz-SignedHeaders=host&x-id=GetObject",
+            "expiry_time": "2023-06-15T01:09:10.872Z"
           }
         }
       ]
@@ -68,16 +68,16 @@
     "CookTime": {
       "id": "ahCV",
       "type": "number",
-      "number": 150
+      "number": 120
     },
     "Tags": {
       "id": "c~%60T",
       "type": "multi_select",
       "multi_select": [
         {
-          "id": "b90a48a6-9a13-4773-9cce-c55e7defdd33",
-          "name": "steak",
-          "color": "red"
+          "id": "580f050a-4afa-4807-984e-873a8840eea5",
+          "name": "chicken",
+          "color": "yellow"
         }
       ]
     },
@@ -88,7 +88,7 @@
         {
           "type": "text",
           "text": {
-            "content": "Gochujang Flank Steak",
+            "content": "Lemon Garlic Herb Chicken Thighs",
             "link": null
           },
           "annotations": {
@@ -99,12 +99,12 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "Gochujang Flank Steak",
+          "plain_text": "Lemon Garlic Herb Chicken Thighs",
           "href": null
         }
       ]
     }
   },
-  "url": "https://www.notion.so/Gochujang-Flank-Steak-7774d3d16b2d4a16abd6a4fd969d4cea",
+  "url": "https://www.notion.so/Lemon-Garlic-Herb-Chicken-Thighs-42e9d10f048e4b01a10c9db9dc9575ff",
   "public_url": null
 }
