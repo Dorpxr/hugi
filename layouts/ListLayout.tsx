@@ -27,8 +27,8 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
   return (
     <>
       <div>
-        <div className="border-b border-neutral-400 pb-6 dark:border-neutral-300">
-          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 md:text-3xl md:leading-14">
+        <div>
+          <h1 className="pb-4 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 md:text-3xl md:leading-14">
             {title}
           </h1>
           <div className="relative max-w-lg">

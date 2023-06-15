@@ -18,7 +18,7 @@ export const HeroBlurb = () => {
       <div className="w-full pt-6 md:w-7/12 md:pt-0 md:pl-28">
         <h2 className="pb-8 text-2xl font-bold">{heroBlurbText.header}</h2>
         <p className="pb-8 text-sm">{heroBlurbText.body}</p>
-        <Link href={`/about`} className="font-bold text-gray-900 dark:text-gray-100">
+        <Link href={`/about`} className="font-bold text-primary-600 dark:text-primary-600">
           {'More About Me ->'}
         </Link>
       </div>
