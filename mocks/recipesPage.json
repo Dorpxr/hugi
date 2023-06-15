@@ -1,8 +1,8 @@
 {
   "object": "page",
-  "id": "af0779ad-c70f-44f5-aac9-025bfb275e2e",
-  "created_time": "2023-04-04T20:38:00.000Z",
-  "last_edited_time": "2023-04-18T00:13:00.000Z",
+  "id": "42e9d10f-048e-4b01-a10c-9db9dc9575ff",
+  "created_time": "2023-04-04T20:47:00.000Z",
+  "last_edited_time": "2023-06-11T22:36:00.000Z",
   "created_by": {
     "object": "user",
     "id": "fb7fee1b-4867-4a4f-8d15-175ea8a1692d"
@@ -26,7 +26,7 @@
         {
           "type": "text",
           "text": {
-            "content": "Yummy cheesy goodles.",
+            "content": "Delicious lemon garlic herb chicken thighs.",
             "link": null
           },
           "annotations": {
@@ -37,7 +37,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "Yummy cheesy goodles.",
+          "plain_text": "Delicious lemon garlic herb chicken thighs.",
           "href": null
         }
       ]
@@ -56,11 +56,11 @@
       "type": "files",
       "files": [
         {
-          "name": "4CCD1E50-17ED-42CA-9031-C5F5A641D067.jpeg",
+          "name": "BEAFF990-264D-45AC-BF07-221DD8E072D7.jpeg",
           "type": "file",
           "file": {
-            "url": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/e3a29739-e88c-4465-9630-6c6d51eedef2/4CCD1E50-17ED-42CA-9031-C5F5A641D067.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230614%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230614T130727Z&X-Amz-Expires=3600&X-Amz-Signature=46cfc7d3ada619a45103d173875109f8c5e3d1a48222c7003e812598534594e1&X-Amz-SignedHeaders=host&x-id=GetObject",
-            "expiry_time": "2023-06-14T14:07:27.234Z"
+            "url": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/eb5b264e-0866-44f3-954c-3a78c05f28ed/BEAFF990-264D-45AC-BF07-221DD8E072D7.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230615%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230615T000910Z&X-Amz-Expires=3600&X-Amz-Signature=aee4264b5e77092bcad84ec81225edadda5f4ac960cc04ad8aefe8bc4b505e2f&X-Amz-SignedHeaders=host&x-id=GetObject",
+            "expiry_time": "2023-06-15T01:09:10.872Z"
           }
         }
       ]
@@ -68,16 +68,16 @@
     "CookTime": {
       "id": "ahCV",
       "type": "number",
-      "number": 15
+      "number": 120
     },
     "Tags": {
       "id": "c~%60T",
       "type": "multi_select",
       "multi_select": [
         {
-          "id": "3c3f87de-865b-436d-bf08-bb1ce619ab29",
-          "name": "gluten-free",
-          "color": "default"
+          "id": "580f050a-4afa-4807-984e-873a8840eea5",
+          "name": "chicken",
+          "color": "yellow"
         }
       ]
     },
@@ -88,7 +88,7 @@
         {
           "type": "text",
           "text": {
-            "content": "Goodles",
+            "content": "Lemon Garlic Herb Chicken Thighs",
             "link": null
           },
           "annotations": {
@@ -99,12 +99,12 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "Goodles",
+          "plain_text": "Lemon Garlic Herb Chicken Thighs",
           "href": null
         }
       ]
     }
   },
-  "url": "https://www.notion.so/Goodles-af0779adc70f44f5aac9025bfb275e2e",
+  "url": "https://www.notion.so/Lemon-Garlic-Herb-Chicken-Thighs-42e9d10f048e4b01a10c9db9dc9575ff",
   "public_url": null
 }
