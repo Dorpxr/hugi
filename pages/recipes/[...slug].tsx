@@ -1,3 +1,4 @@
+import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { databaseId, notionClient } from '@/lib/notion/client'
 import PageTitle from '@/components/PageTitle'
 import { MDXLayoutRenderer } from '@/components/MDXComponents'
@@ -25,7 +26,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }
 }
 
-export async function getStaticProps({ params: { slug } }) {
+export const getStaticProps: GetStaticProps = async ({ params: { slug } }) => {
   const pageId = slug.toString().split('-').pop()
   const page = await getPage(pageId)
   const content = await n2m.pageToMarkdown(pageId)
@@ -35,6 +36,9 @@ export async function getStaticProps({ params: { slug } }) {
   const tags = page.properties.Tags.multi_select.map((tag) => tag.name)
   const createdAt = page.created_time.split('T')[0].toString()
   const status = page.properties.Status.status.name
+  const cookTime = page.properties.CookTime
+  const summary = page.properties.Summary.rich_text
+  const featureImage = page.properties.FeatureImage.files[0].file.url
 
   return {
     props: {
@@ -45,18 +49,32 @@ export async function getStaticProps({ params: { slug } }) {
       tags,
       createdAt,
       status,
+      cookTime,
+      summary,
+      featureImage,
     },
   }
 }
 
-export default function Recipe({ content, slug, authorDetails, title, tags, createdAt, status }) {
+export default function Recipe({
+  content,
+  slug,
+  authorDetails,
+  title,
+  tags,
+  createdAt,
+  status,
+  cookTime,
+  summary,
+  featureImage,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
       {status !== 'Draft' ? (
         <MDXLayoutRenderer
           layout={DEFAULT_LAYOUT}
           mdxSource={content}
-          frontMatter={{ slug, date: createdAt, title, tags }}
+          pageMetaData={{ slug, createdAt, title, tags, status, cookTime, summary, featureImage }}
           authorDetails={authorDetails}
         />
       ) : (

@@ -39,7 +39,7 @@ export async function getAllPostsFrontMatter(databaseId: string): Promise<PageMe
     if (page.properties.Status.status.name !== 'Draft') {
       allFrontMatter.push({
         title: page.properties.Post.title[0].plain_text,
-        createdAt: page.created_time.split('T')[0].toString(),
+        createdAt: page.created_time,
         slug:
           page.properties.Post.title[0].plain_text.replace(/ /g, '-') +
           '-' +

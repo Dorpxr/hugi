@@ -1,11 +1,13 @@
 /* eslint-disable react/display-name */
-import { useMemo } from 'react'
+import React, { useMemo } from 'react'
 import { getMDXComponent } from 'mdx-bundler/client'
 import Image from './Image'
 import CustomLink from './Link'
 import TOCInline from './TOCInline'
 import Pre from './Pre'
 import { BlogNewsletterForm } from './NewsletterForm'
+import { Author } from '@/lib/types/author.interface'
+import { PageMetaData } from '@/lib/notion/interfaces/recipePageMetaData.interface'
 
 export const MDXComponents = {
   Image,
@@ -19,7 +21,14 @@ export const MDXComponents = {
   },
 }
 
-export const MDXLayoutRenderer = ({ layout, mdxSource, ...rest }) => {
+type MDXLayoutRendererProps = {
+  layout: React.ReactNode
+  mdxSource: string
+  pageMetaData: PageMetaData
+  authorDetails: Author
+}
+
+export const MDXLayoutRenderer = ({ layout, mdxSource, ...rest }: MDXLayoutRendererProps) => {
   const MDXLayout = useMemo(() => getMDXComponent(mdxSource), [mdxSource])
 
   return <MDXLayout layout={layout} components={MDXComponents} {...rest} />

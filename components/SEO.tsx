@@ -73,6 +73,19 @@ export const TagSEO = ({ title, description }) => {
   )
 }
 
+interface BlogSEOProps {
+  authorDetails: {
+    name: string
+  }[]
+  title: string
+  summary: string
+  date: string
+  lastmod?: string
+  url: string
+  images?: string[]
+  canonicalUrl?: string
+}
+
 export const BlogSEO = ({
   authorDetails,
   title,
@@ -82,10 +95,10 @@ export const BlogSEO = ({
   url,
   images = [],
   canonicalUrl,
-}) => {
+}: BlogSEOProps) => {
   const router = useRouter()
-  const publishedAt = new Date(date).toISOString()
-  const modifiedAt = new Date(lastmod || date).toISOString()
+  const publishedAt = new Date(date).toString()
+  const modifiedAt = new Date(lastmod || date).toString()
   let imagesArr =
     images.length === 0
       ? [siteMetadata.socialBanner]

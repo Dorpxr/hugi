@@ -1,42 +1,42 @@
 [
   {
     "title": "Gochujang Flank Steak",
-    "createdAt": "2023-04-04",
+    "createdAt": "2023-04-04T20:49:00.000Z",
     "slug": "Gochujang-Flank-Steak-7774d3d16b2d4a16abd6a4fd969d4cea",
     "tags": ["steak"],
     "status": "Done",
     "summary": "Flank steak with good sauce.",
-    "featureImage": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/baf99b6c-c1a1-48b7-b3b3-841253a0dfda/C93AD4B6-9DB5-4A33-9FAC-FE2876DDCF0E.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230615%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230615T022320Z&X-Amz-Expires=3600&X-Amz-Signature=e366971a94ca4afbb0a0cc3bab6c538a21f19746fafa17fb6af9019cbc94adbd&X-Amz-SignedHeaders=host&x-id=GetObject",
+    "featureImage": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/baf99b6c-c1a1-48b7-b3b3-841253a0dfda/C93AD4B6-9DB5-4A33-9FAC-FE2876DDCF0E.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230617%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230617T014539Z&X-Amz-Expires=3600&X-Amz-Signature=ce4ba17fd1f0015553e10c3a37e3100f26d131d0c2309b6bf8517954eeaa01e5&X-Amz-SignedHeaders=host&x-id=GetObject",
     "cookTime": 150
   },
   {
     "title": "Lemon Garlic Herb Chicken Thighs",
-    "createdAt": "2023-04-04",
+    "createdAt": "2023-04-04T20:47:00.000Z",
     "slug": "Lemon-Garlic-Herb-Chicken-Thighs-42e9d10f048e4b01a10c9db9dc9575ff",
     "tags": ["chicken"],
     "status": "Done",
     "summary": "Delicious lemon garlic herb chicken thighs.",
-    "featureImage": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/eb5b264e-0866-44f3-954c-3a78c05f28ed/BEAFF990-264D-45AC-BF07-221DD8E072D7.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230615%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230615T022320Z&X-Amz-Expires=3600&X-Amz-Signature=639f76712dd3db9d0eab9eed894f4a679de982840941ca8991444c5f0ac2ad63&X-Amz-SignedHeaders=host&x-id=GetObject",
+    "featureImage": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/eb5b264e-0866-44f3-954c-3a78c05f28ed/BEAFF990-264D-45AC-BF07-221DD8E072D7.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230617%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230617T014539Z&X-Amz-Expires=3600&X-Amz-Signature=5001e4d114d895119bbe7a1e850d53162d1650b8e5c044c7fb5a5221c1655531&X-Amz-SignedHeaders=host&x-id=GetObject",
     "cookTime": 120
   },
   {
     "title": "Goodles",
-    "createdAt": "2023-04-04",
+    "createdAt": "2023-04-04T20:38:00.000Z",
     "slug": "Goodles-af0779adc70f44f5aac9025bfb275e2e",
     "tags": ["gluten-free"],
     "status": "Done",
     "summary": "Yummy cheesy goodles.",
-    "featureImage": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/e3a29739-e88c-4465-9630-6c6d51eedef2/4CCD1E50-17ED-42CA-9031-C5F5A641D067.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230615%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230615T022320Z&X-Amz-Expires=3600&X-Amz-Signature=c4a809cfcc9eb11d31824deb71642968b16f094b05198fde7b1220243c5e66d4&X-Amz-SignedHeaders=host&x-id=GetObject",
+    "featureImage": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/e3a29739-e88c-4465-9630-6c6d51eedef2/4CCD1E50-17ED-42CA-9031-C5F5A641D067.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230617%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230617T014539Z&X-Amz-Expires=3600&X-Amz-Signature=05285ad86db9ccb508d0337980f6813a135a99846d48759902820385dd18dfc1&X-Amz-SignedHeaders=host&x-id=GetObject",
     "cookTime": 15
   },
   {
     "title": "Healthy Icecream",
-    "createdAt": "2023-04-03",
+    "createdAt": "2023-04-03T21:25:00.000Z",
     "slug": "Healthy-Icecream-ed458c3c4339446c88be1d10963071ce",
     "tags": ["dessert"],
     "status": "Done",
     "summary": "Healthy icecream made with cottage cheese.",
-    "featureImage": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/eedc2f63-fcd1-4e71-a9f9-83376465c46f/2BC48B4C-B03A-481F-94FA-B75C0D3A6910.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230615%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230615T022320Z&X-Amz-Expires=3600&X-Amz-Signature=96a0badbbfbafe5a4a12b61b487ea690ca4c2fadc7f944d3631eb9f60439b35f&X-Amz-SignedHeaders=host&x-id=GetObject",
+    "featureImage": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/eedc2f63-fcd1-4e71-a9f9-83376465c46f/2BC48B4C-B03A-481F-94FA-B75C0D3A6910.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230617%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230617T014539Z&X-Amz-Expires=3600&X-Amz-Signature=db9395f5c7663bb5ec670aedda4f401bace7bc1840c1b55c97e0153746ae4697&X-Amz-SignedHeaders=host&x-id=GetObject",
     "cookTime": 30
   }
 ]
