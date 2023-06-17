@@ -24,7 +24,7 @@ interface Props {
 }
 
 export default function PostLayout({
-  pageMetaData: { slug, createdAt, title, tags, summary },
+  pageMetaData: { slug, createdAt, title, tags, summary, featureImage },
   authorDetails,
   children,
 }: Props) {
@@ -36,6 +36,7 @@ export default function PostLayout({
         title={title}
         date={createdAt}
         summary={summary}
+        images={[featureImage]}
       />
       <ScrollTopAndComment />
       <article>
@@ -89,7 +90,10 @@ export default function PostLayout({
                 </ul>
               </dd>
             </dl>
-            <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
+            <div className="xl:col-span-3 xl:row-span-2 xl:pb-0">
+              <div className="relative pt-6">
+                <Image src={featureImage} width={960} height={540} alt={title} />
+              </div>
               <div className="prose max-w-none pt-10 pb-8 dark:prose-dark">{children}</div>
             </div>
             <footer>
