@@ -29,7 +29,7 @@ export async function processContent(content) {
     process.env.ESBUILD_BINARY_PATH = path.join(root, 'node_modules', 'esbuild', 'bin', 'esbuild')
   }
 
-  const { code } = await bundleMDX({
+  const { code, frontmatter } = await bundleMDX({
     source: content,
     // mdx imports can be automatically source from the components directory
     cwd: path.join(root, 'components'),
@@ -69,5 +69,6 @@ export async function processContent(content) {
 
   return {
     mdxSource: code,
+    frontMatter: frontmatter,
   }
 }

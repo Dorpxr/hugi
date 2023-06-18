@@ -1,8 +1,8 @@
 const siteMetadata = {
-  title: 'Gud Eats',
+  title: 'Healthy-ish',
   author: 'Anna Skryd',
-  headerTitle: 'Gud Eats',
-  description: 'Food and Recipes from Gud Eats',
+  headerTitle: 'Healthy-ish',
+  description: 'Food and Recipes from Healthy-ish',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://anna-chef-site.vercel.app/',

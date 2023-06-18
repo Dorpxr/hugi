@@ -24,8 +24,8 @@ export const MDXComponents = {
 type MDXLayoutRendererProps = {
   layout: React.ReactNode
   mdxSource: string
-  pageMetaData: PageMetaData
-  authorDetails: Author
+  pageMetaData?: PageMetaData
+  authorDetails?: Author
 }
 
 export const MDXLayoutRenderer = ({ layout, mdxSource, ...rest }: MDXLayoutRendererProps) => {
