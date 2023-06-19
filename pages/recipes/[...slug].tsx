@@ -1,11 +1,14 @@
-import { GetStaticProps, InferGetStaticPropsType } from 'next'
+import { GetStaticProps, InferGetStaticPropsType, GetStaticPaths } from 'next'
 import { databaseId, notionClient } from '@/lib/notion/client'
 import PageTitle from '@/components/PageTitle'
 import { MDXLayoutRenderer } from '@/components/MDXComponents'
 import { processContent } from '@/lib/mdx'
 import { NotionToMarkdown } from 'notion-to-md'
 import { getDatabase, getPage } from '@/lib/notion/getOps'
-import { GetStaticPaths } from 'next'
+import path from 'path'
+import { readFileSync } from 'fs'
+import matter from 'gray-matter'
+import { Author } from '@/lib/types/author.interface'
 
 const DEFAULT_LAYOUT = 'PostLayout'
 
@@ -39,12 +42,15 @@ export const getStaticProps: GetStaticProps = async ({ params: { slug } }) => {
   const cookTime = page.properties.CookTime
   const summary = page.properties.Summary.rich_text
   const featureImage = page.properties.FeatureImage.files[0].file.url
+  const filePath = path.join(process.cwd(), 'data', 'authors', 'default.md')
+  const source = readFileSync(filePath, 'utf-8').toString()
+  const { data: authorDetails } = matter(source) as unknown as { data: Author }
 
   return {
     props: {
       content: processedContent.mdxSource,
       slug,
-      authorDetails: [{ name: 'Anna Skryd' }],
+      authorDetails: [authorDetails],
       title,
       tags,
       createdAt,

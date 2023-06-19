@@ -1,5 +1,4 @@
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
-import matter from 'gray-matter'
 import path from 'path'
 import { readFileSync } from 'fs'
 import { MDXLayoutRenderer } from '@/components/MDXComponents'

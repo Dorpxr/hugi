@@ -60,8 +60,8 @@
             "name": "C93AD4B6-9DB5-4A33-9FAC-FE2876DDCF0E.jpeg",
             "type": "file",
             "file": {
-              "url": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/baf99b6c-c1a1-48b7-b3b3-841253a0dfda/C93AD4B6-9DB5-4A33-9FAC-FE2876DDCF0E.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230618%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230618T183903Z&X-Amz-Expires=3600&X-Amz-Signature=52f178331f6a582507ea7e00b0ceb64a5d52f79764abae0f1ecdd4cf729ceb5c&X-Amz-SignedHeaders=host&x-id=GetObject",
-              "expiry_time": "2023-06-18T19:39:03.729Z"
+              "url": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/baf99b6c-c1a1-48b7-b3b3-841253a0dfda/C93AD4B6-9DB5-4A33-9FAC-FE2876DDCF0E.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230619%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230619T120300Z&X-Amz-Expires=3600&X-Amz-Signature=339ce7c4c209b4c16fc29e98157966b5fdb4fb644e3f0749f76773057d93b5a5&X-Amz-SignedHeaders=host&x-id=GetObject",
+              "expiry_time": "2023-06-19T13:03:00.677Z"
             }
           }
         ]
@@ -170,8 +170,8 @@
             "name": "BEAFF990-264D-45AC-BF07-221DD8E072D7.jpeg",
             "type": "file",
             "file": {
-              "url": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/eb5b264e-0866-44f3-954c-3a78c05f28ed/BEAFF990-264D-45AC-BF07-221DD8E072D7.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230618%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230618T183903Z&X-Amz-Expires=3600&X-Amz-Signature=443dad748cad7f18b712aa4a739ad9b43cae2201d39a83a3734d90d0dea5f4a0&X-Amz-SignedHeaders=host&x-id=GetObject",
-              "expiry_time": "2023-06-18T19:39:03.729Z"
+              "url": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/eb5b264e-0866-44f3-954c-3a78c05f28ed/BEAFF990-264D-45AC-BF07-221DD8E072D7.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230619%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230619T120300Z&X-Amz-Expires=3600&X-Amz-Signature=21364c1c95d484beb5397a6cdf305eca87dda59d72e59db6ea9cd143f43c3fc7&X-Amz-SignedHeaders=host&x-id=GetObject",
+              "expiry_time": "2023-06-19T13:03:00.677Z"
             }
           }
         ]
@@ -221,119 +221,9 @@
   },
   {
     "object": "page",
-    "id": "af0779ad-c70f-44f5-aac9-025bfb275e2e",
-    "created_time": "2023-04-04T20:38:00.000Z",
-    "last_edited_time": "2023-04-18T00:13:00.000Z",
-    "created_by": {
-      "object": "user",
-      "id": "fb7fee1b-4867-4a4f-8d15-175ea8a1692d"
-    },
-    "last_edited_by": {
-      "object": "user",
-      "id": "fb7fee1b-4867-4a4f-8d15-175ea8a1692d"
-    },
-    "cover": null,
-    "icon": null,
-    "parent": {
-      "type": "database_id",
-      "database_id": "e1117d7f-6e25-44ed-ad17-e4b128a8b1d1"
-    },
-    "archived": false,
-    "properties": {
-      "Summary": {
-        "id": "%3Fvhq",
-        "type": "rich_text",
-        "rich_text": [
-          {
-            "type": "text",
-            "text": {
-              "content": "Yummy cheesy goodles.",
-              "link": null
-            },
-            "annotations": {
-              "bold": false,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": "Yummy cheesy goodles.",
-            "href": null
-          }
-        ]
-      },
-      "Status": {
-        "id": "WvHt",
-        "type": "status",
-        "status": {
-          "id": "80989625-4eaa-498d-957c-7740a50a218a",
-          "name": "Done",
-          "color": "green"
-        }
-      },
-      "FeatureImage": {
-        "id": "%60YsO",
-        "type": "files",
-        "files": [
-          {
-            "name": "4CCD1E50-17ED-42CA-9031-C5F5A641D067.jpeg",
-            "type": "file",
-            "file": {
-              "url": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/e3a29739-e88c-4465-9630-6c6d51eedef2/4CCD1E50-17ED-42CA-9031-C5F5A641D067.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230618%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230618T183903Z&X-Amz-Expires=3600&X-Amz-Signature=1d3404290fdbfe21a60e09c8d6c01d87d8bde77caede9d327aed80d33dd53694&X-Amz-SignedHeaders=host&x-id=GetObject",
-              "expiry_time": "2023-06-18T19:39:03.729Z"
-            }
-          }
-        ]
-      },
-      "CookTime": {
-        "id": "ahCV",
-        "type": "number",
-        "number": 15
-      },
-      "Tags": {
-        "id": "c~%60T",
-        "type": "multi_select",
-        "multi_select": [
-          {
-            "id": "3c3f87de-865b-436d-bf08-bb1ce619ab29",
-            "name": "gluten-free",
-            "color": "default"
-          }
-        ]
-      },
-      "Post": {
-        "id": "title",
-        "type": "title",
-        "title": [
-          {
-            "type": "text",
-            "text": {
-              "content": "Goodles",
-              "link": null
-            },
-            "annotations": {
-              "bold": false,
-              "italic": false,
-              "strikethrough": false,
-              "underline": false,
-              "code": false,
-              "color": "default"
-            },
-            "plain_text": "Goodles",
-            "href": null
-          }
-        ]
-      }
-    },
-    "url": "https://www.notion.so/Goodles-af0779adc70f44f5aac9025bfb275e2e",
-    "public_url": null
-  },
-  {
-    "object": "page",
     "id": "ed458c3c-4339-446c-88be-1d10963071ce",
     "created_time": "2023-04-03T21:25:00.000Z",
-    "last_edited_time": "2023-06-17T12:47:00.000Z",
+    "last_edited_time": "2023-06-19T11:51:00.000Z",
     "created_by": {
       "object": "user",
       "id": "fb7fee1b-4867-4a4f-8d15-175ea8a1692d"
@@ -357,7 +247,7 @@
           {
             "type": "text",
             "text": {
-              "content": "Healthy icecream made with cottage cheese.",
+              "content": "This high-protein ice cream is made with creamy whole milk cottage cheese. The base of this ice cream is perfectly customizable, allowing you to add whatever mix ins or toppings you prefer. Here we have a classic sweet a salty pairing with chocolate and peanut butter.",
               "link": null
             },
             "annotations": {
@@ -368,7 +258,7 @@
               "code": false,
               "color": "default"
             },
-            "plain_text": "Healthy icecream made with cottage cheese.",
+            "plain_text": "This high-protein ice cream is made with creamy whole milk cottage cheese. The base of this ice cream is perfectly customizable, allowing you to add whatever mix ins or toppings you prefer. Here we have a classic sweet a salty pairing with chocolate and peanut butter.",
             "href": null
           }
         ]
@@ -390,8 +280,8 @@
             "name": "2BC48B4C-B03A-481F-94FA-B75C0D3A6910.jpeg",
             "type": "file",
             "file": {
-              "url": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/eedc2f63-fcd1-4e71-a9f9-83376465c46f/2BC48B4C-B03A-481F-94FA-B75C0D3A6910.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230618%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230618T183903Z&X-Amz-Expires=3600&X-Amz-Signature=ca86d71f7e2b4419686e5111fb411badd4b38e0626ba8475ebef1a0c48c372ce&X-Amz-SignedHeaders=host&x-id=GetObject",
-              "expiry_time": "2023-06-18T19:39:03.729Z"
+              "url": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/eedc2f63-fcd1-4e71-a9f9-83376465c46f/2BC48B4C-B03A-481F-94FA-B75C0D3A6910.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230619%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230619T120300Z&X-Amz-Expires=3600&X-Amz-Signature=e1e6a7249dba94883c1622d7b03458d17bf510000352f60adbf3de43f7593a06&X-Amz-SignedHeaders=host&x-id=GetObject",
+              "expiry_time": "2023-06-19T13:03:00.678Z"
             }
           }
         ]
@@ -399,16 +289,26 @@
       "CookTime": {
         "id": "ahCV",
         "type": "number",
-        "number": 30
+        "number": 180
       },
       "Tags": {
         "id": "c~%60T",
         "type": "multi_select",
         "multi_select": [
           {
+            "id": "722f34c7-939e-455f-aeb7-04de2332191f",
+            "name": "high protein",
+            "color": "green"
+          },
+          {
             "id": "2a250f8c-cb71-4f79-807f-f6dd645c85bd",
             "name": "dessert",
             "color": "purple"
+          },
+          {
+            "id": "c1efdae2-8990-40e7-b076-e65d0f5d364b",
+            "name": "easy",
+            "color": "green"
           }
         ]
       },
@@ -419,7 +319,7 @@
           {
             "type": "text",
             "text": {
-              "content": "Healthy Icecream",
+              "content": "High Protein Ice Cream",
               "link": null
             },
             "annotations": {
@@ -430,13 +330,13 @@
               "code": false,
               "color": "default"
             },
-            "plain_text": "Healthy Icecream",
+            "plain_text": "High Protein Ice Cream",
             "href": null
           }
         ]
       }
     },
-    "url": "https://www.notion.so/Healthy-Icecream-ed458c3c4339446c88be1d10963071ce",
+    "url": "https://www.notion.so/High-Protein-Ice-Cream-ed458c3c4339446c88be1d10963071ce",
     "public_url": null
   }
 ]

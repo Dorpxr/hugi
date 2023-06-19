@@ -17,9 +17,7 @@ const Card = ({ title, imgSrc, href, tags, cookTime }) => (
       </h3>
       <div className="flex justify-between">
         <div className="flex flex-wrap">
-          {tags.map((tag) => (
-            <Tag key={tag} text={tag} />
-          ))}
+          {tags && tags.length > 0 && <Tag key={tags[0]} text={tags[0]} />}
         </div>
         <div className="flex text-gray-500 dark:text-gray-400">
           <AppIcon kind="clock" size={5} />
