@@ -9,6 +9,7 @@ import path from 'path'
 import { readFileSync } from 'fs'
 import matter from 'gray-matter'
 import { Author } from '@/lib/types/author.interface'
+import { generateSitemap } from '@/lib/generate-sitemap'
 
 const DEFAULT_LAYOUT = 'PostLayout'
 
@@ -16,6 +17,7 @@ const n2m = new NotionToMarkdown({ notionClient })
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const results = await getDatabase(databaseId)
+  await generateSitemap()
 
   return {
     paths: results.map((page) => ({
