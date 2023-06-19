@@ -29,7 +29,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ['InterVariable', ...defaultTheme.fontFamily.sans],
-        fancy: ['Pacifico', 'Cursive'],
+        fancy: ['Pattaya', 'sans-serif'],
       },
       colors: {
         primary: colors.emerald,

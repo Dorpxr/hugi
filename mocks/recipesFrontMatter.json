@@ -7,7 +7,7 @@
     "tags": ["steak"],
     "status": "Done",
     "summary": "Flank steak with good sauce.",
-    "featureImage": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/baf99b6c-c1a1-48b7-b3b3-841253a0dfda/C93AD4B6-9DB5-4A33-9FAC-FE2876DDCF0E.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230619%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230619T172008Z&X-Amz-Expires=3600&X-Amz-Signature=08218e27a994b932971acafbe6015e8144a5d98e6de14d0a13f03f457d31c9fb&X-Amz-SignedHeaders=host&x-id=GetObject",
+    "featureImage": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/baf99b6c-c1a1-48b7-b3b3-841253a0dfda/C93AD4B6-9DB5-4A33-9FAC-FE2876DDCF0E.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230619%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230619T182715Z&X-Amz-Expires=3600&X-Amz-Signature=333fe4ac182613ce8ca7484139ab2fa9a6a48bdfb5c70620be1780d0e5aa4324&X-Amz-SignedHeaders=host&x-id=GetObject",
     "cookTime": 150
   },
   {
@@ -18,7 +18,7 @@
     "tags": ["chicken"],
     "status": "Done",
     "summary": "Delicious lemon garlic herb chicken thighs.",
-    "featureImage": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/eb5b264e-0866-44f3-954c-3a78c05f28ed/BEAFF990-264D-45AC-BF07-221DD8E072D7.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230619%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230619T172008Z&X-Amz-Expires=3600&X-Amz-Signature=51ca5e3b1e0833df3b52e2db30225a92be4d14bbf81de984816de0a4696f675b&X-Amz-SignedHeaders=host&x-id=GetObject",
+    "featureImage": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/eb5b264e-0866-44f3-954c-3a78c05f28ed/BEAFF990-264D-45AC-BF07-221DD8E072D7.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230619%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230619T182715Z&X-Amz-Expires=3600&X-Amz-Signature=2c905e1f3cf948061b2c2c7cc4c4fb3d392f9912b14dcc412d2cdd4a560987af&X-Amz-SignedHeaders=host&x-id=GetObject",
     "cookTime": 120
   },
   {
@@ -29,7 +29,7 @@
     "tags": ["high protein", "dessert", "easy"],
     "status": "Done",
     "summary": "This high-protein ice cream is made with creamy whole milk cottage cheese. The base of this ice cream is perfectly customizable, allowing you to add whatever mix ins or toppings you prefer. Here we have a classic sweet a salty pairing with chocolate and peanut butter.",
-    "featureImage": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/eedc2f63-fcd1-4e71-a9f9-83376465c46f/2BC48B4C-B03A-481F-94FA-B75C0D3A6910.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230619%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230619T172008Z&X-Amz-Expires=3600&X-Amz-Signature=1f29c8277174d49e9ed90780b5a3f2e1d6471176aa80ce07e4eb79a929672dfa&X-Amz-SignedHeaders=host&x-id=GetObject",
+    "featureImage": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/eedc2f63-fcd1-4e71-a9f9-83376465c46f/2BC48B4C-B03A-481F-94FA-B75C0D3A6910.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230619%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230619T182715Z&X-Amz-Expires=3600&X-Amz-Signature=220e356d56c18c0df458fc4ad06adab1d58560421728d98a73c1978a76f385e7&X-Amz-SignedHeaders=host&x-id=GetObject",
     "cookTime": 180
   }
 ]
