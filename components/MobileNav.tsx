@@ -1,15 +1,32 @@
-import { useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import Link from './Link'
 import headerNavLinks from '@/data/headerNavLinks'
 
+const CLOSEEVENTNAME = 'CLICK_OUT_OF_MENU'
+
 const MobileNav = () => {
   const [navShow, setNavShow] = useState(false)
+
+  const containerRef = useRef(null)
 
   const onToggleNav = () => {
     setNavShow((status) => {
       return !status
     })
   }
+
+  useEffect(() => {
+    const handleClickOutOfMenu = (e: Event) => {
+      if (e.type === 'mouseup' && e.target === containerRef.current) {
+        onToggleNav()
+      }
+    }
+    containerRef.current.addEventListener('mouseup', handleClickOutOfMenu)
+
+    return () => {
+      containerRef.current.removeEventListener('mouseup', handleClickOutOfMenu)
+    }
+  }, [])
 
   return (
     <div className="sm:hidden">
@@ -33,17 +50,18 @@ const MobileNav = () => {
         </svg>
       </button>
       <div
+        ref={containerRef}
         className={`fixed top-0 left-0 z-10 h-full w-full transform bg-gray-400/80 backdrop-blur-sm duration-300 ease-in-out dark:bg-gray-800/80 ${
           navShow ? 'translate-y-0' : 'translate-y-full'
         }`}
       >
         <div className="fixed top-0 right-0 z-20 m-4 flex w-full max-w-xs justify-between rounded-lg bg-white opacity-100 dark:bg-black">
-          <nav className="h-full px-4 pt-6">
+          <nav className="h-full py-3">
             {headerNavLinks.map((link) => (
-              <div key={link.title} className="pb-6">
+              <div key={link.title} className="py-3">
                 <Link
                   href={link.href}
-                  className="text-base font-bold tracking-wide text-gray-900 dark:text-gray-100"
+                  className="px-6 py-3 text-base font-bold tracking-wide text-gray-900 dark:text-gray-100"
                   onClick={onToggleNav}
                 >
                   {link.title}
@@ -54,7 +72,7 @@ const MobileNav = () => {
           <div className="flex justify-end">
             <button
               type="button"
-              className="mr-4 mt-6 h-6 w-6 rounded"
+              className="mr-6 mt-6 h-6 w-6 rounded"
               aria-label="Toggle Menu"
               onClick={onToggleNav}
             >
