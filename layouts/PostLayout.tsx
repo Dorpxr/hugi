@@ -41,7 +41,7 @@ export default function PostLayout({
       />
       <ScrollTopAndComment />
       <article>
-        <div className="xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">
+        <div>
           <header className="pt-6 xl:pb-6">
             <div className="space-y-1 text-center">
               <div>
@@ -50,10 +50,10 @@ export default function PostLayout({
             </div>
           </header>
           <div
-            className="divide-y divide-gray-200 pb-8 dark:divide-gray-700 xl:grid xl:grid-cols-4 xl:gap-x-6 xl:divide-y-0"
+            className="divide-y divide-y-0 pb-8 xl:grid xl:grid-cols-4 xl:gap-x-6 xl:divide-gray-200 xl:dark:divide-gray-700"
             style={{ gridTemplateRows: 'auto 1fr' }}
           >
-            <dl className="pt-6 pb-10 xl:border-b xl:border-gray-200 xl:pt-11 xl:dark:border-gray-700">
+            <dl className="pt-6 pb-10 xl:border-b xl:border-gray-300 xl:pt-0 xl:pb-6 xl:pt-11 xl:dark:border-gray-700">
               <dt className="sr-only">Authors</dt>
               <dd>
                 <ul className="flex justify-center space-x-8 sm:space-x-12 xl:block xl:space-x-0 xl:space-y-8">
@@ -103,15 +103,15 @@ export default function PostLayout({
               </div>
             </dl>
             <div className="xl:col-span-3 xl:row-span-2 xl:pb-0">
-              <div className="relative pt-6">
+              <div className="relative">
                 <Image src={featureImage} width={960} height={540} alt={title} />
               </div>
               <div className="prose max-w-none pt-10 pb-8 dark:prose-dark">{children}</div>
             </div>
             <footer>
-              <div className="divide-gray-200 text-sm font-medium leading-5 dark:divide-gray-700 xl:col-start-1 xl:row-start-2 xl:divide-y">
+              <div className="divide-gray-300 text-sm font-medium leading-5 dark:divide-gray-700 xl:col-start-1 xl:row-start-2 xl:divide-y">
                 {tags && (
-                  <div className="py-4 xl:py-8">
+                  <div className="py-3 xl:py-6">
                     <div className="flex flex-wrap">
                       {tags.map((tag) => (
                         <Tag key={tag} text={tag} />
@@ -123,7 +123,7 @@ export default function PostLayout({
               <div className="pt-4 xl:pt-8">
                 <Link
                   href="/recipes"
-                  className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                  className="text-primary-700 hover:text-primary-600 dark:hover:text-primary-300"
                 >
                   &larr; Back to recipes
                 </Link>

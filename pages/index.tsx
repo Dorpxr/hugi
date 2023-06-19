@@ -19,7 +19,7 @@ export default function Home({ posts }) {
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
       <div>
-        <div className="flex justify-between border-b border-neutral-400 pb-6 dark:border-neutral-300">
+        <div className="flex justify-between pb-3">
           <div className="flex flex-col">
             <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 md:text-3xl md:leading-14">
               Latest
@@ -41,7 +41,7 @@ export default function Home({ posts }) {
           )}
         </div>
         <div>
-          <ul className="flex overflow-x-scroll pt-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:overflow-x-auto">
+          <ul className="flex overflow-x-scroll pt-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:overflow-x-auto">
             {!posts.length && 'No posts found.'}
             {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
               const { slug, title, featureImage, tags, cookTime } = frontMatter
