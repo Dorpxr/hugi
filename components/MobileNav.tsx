@@ -2,8 +2,6 @@ import { useEffect, useState, useRef } from 'react'
 import Link from './Link'
 import headerNavLinks from '@/data/headerNavLinks'
 
-const CLOSEEVENTNAME = 'CLICK_OUT_OF_MENU'
-
 const MobileNav = () => {
   const [navShow, setNavShow] = useState(false)
 

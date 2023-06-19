@@ -53,7 +53,7 @@ export default function PostLayout({
             className="divide-y divide-y-0 pb-8 xl:grid xl:grid-cols-4 xl:gap-x-6 xl:divide-gray-200 xl:dark:divide-gray-700"
             style={{ gridTemplateRows: 'auto 1fr' }}
           >
-            <dl className="pt-6 pb-10 xl:border-b xl:border-gray-300 xl:pt-0 xl:pb-6 xl:pt-11 xl:dark:border-gray-700">
+            <dl className="pt-6 pb-10 xl:border-b xl:border-gray-300 xl:pt-0 xl:pb-6 xl:pt-0 xl:dark:border-gray-700">
               <dt className="sr-only">Authors</dt>
               <dd>
                 <ul className="flex justify-center space-x-8 sm:space-x-12 xl:block xl:space-x-0 xl:space-y-8">
