@@ -24,7 +24,7 @@ interface Props {
 }
 
 export default function PostLayout({
-  pageMetaData: { slug, createdAt, title, tags, summary, featureImage },
+  pageMetaData: { slug, createdAt, title, tags, summary, featureImage, lastModifiedAt },
   authorDetails,
   children,
 }: Props) {
@@ -35,6 +35,7 @@ export default function PostLayout({
         authorDetails={authorDetails}
         title={title}
         date={createdAt}
+        lastmod={lastModifiedAt}
         summary={summary}
         images={[featureImage]}
       />
@@ -43,19 +44,6 @@ export default function PostLayout({
         <div className="xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">
           <header className="pt-6 xl:pb-6">
             <div className="space-y-1 text-center">
-              <dl className="space-y-10">
-                <div>
-                  <dt className="sr-only">Published on</dt>
-                  <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                    <time dateTime={createdAt}>
-                      {new Date(createdAt).toLocaleDateString(
-                        siteMetadata.locale,
-                        postDateTemplate
-                      )}
-                    </time>
-                  </dd>
-                </div>
-              </dl>
               <div>
                 <PageTitle>{title}</PageTitle>
               </div>
@@ -89,6 +77,30 @@ export default function PostLayout({
                   ))}
                 </ul>
               </dd>
+              <div className="flex justify-between pt-8 xl:flex-col">
+                <div className="xl:pb-6">
+                  <dt className="text-center text-sm xl:text-left">Published on</dt>
+                  <dd className="pr-1 text-sm font-medium leading-6 text-gray-500 dark:text-gray-400 sm:pr-0 sm:text-base">
+                    <time dateTime={createdAt}>
+                      {new Date(createdAt).toLocaleDateString(
+                        siteMetadata.locale,
+                        postDateTemplate
+                      )}
+                    </time>
+                  </dd>
+                </div>
+                <div>
+                  <dt className="text-center text-sm xl:text-left">Updated on</dt>
+                  <dd className="pl-1 text-sm font-medium leading-6 text-gray-500 dark:text-gray-400 sm:pl-0 sm:text-base">
+                    <time dateTime={lastModifiedAt}>
+                      {new Date(lastModifiedAt).toLocaleDateString(
+                        siteMetadata.locale,
+                        postDateTemplate
+                      )}
+                    </time>
+                  </dd>
+                </div>
+              </div>
             </dl>
             <div className="xl:col-span-3 xl:row-span-2 xl:pb-0">
               <div className="relative pt-6">

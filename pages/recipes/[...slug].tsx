@@ -42,6 +42,7 @@ export const getStaticProps: GetStaticProps = async ({ params: { slug } }) => {
   const cookTime = page.properties.CookTime
   const summary = page.properties.Summary.rich_text
   const featureImage = page.properties.FeatureImage.files[0].file.url
+  const lastModifiedAt = page.last_edited_time.split('T')[0].toString()
   const filePath = path.join(process.cwd(), 'data', 'authors', 'default.md')
   const source = readFileSync(filePath, 'utf-8').toString()
   const { data: authorDetails } = matter(source) as unknown as { data: Author }
@@ -58,6 +59,7 @@ export const getStaticProps: GetStaticProps = async ({ params: { slug } }) => {
       cookTime,
       summary,
       featureImage,
+      lastModifiedAt,
     },
   }
 }
@@ -73,6 +75,7 @@ export default function Recipe({
   cookTime,
   summary,
   featureImage,
+  lastModifiedAt,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
@@ -80,7 +83,17 @@ export default function Recipe({
         <MDXLayoutRenderer
           layout={DEFAULT_LAYOUT}
           mdxSource={content}
-          pageMetaData={{ slug, createdAt, title, tags, status, cookTime, summary, featureImage }}
+          pageMetaData={{
+            slug,
+            createdAt,
+            lastModifiedAt,
+            title,
+            tags,
+            status,
+            cookTime,
+            summary,
+            featureImage,
+          }}
           authorDetails={authorDetails}
         />
       ) : (

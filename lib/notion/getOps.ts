@@ -40,6 +40,7 @@ export async function getAllPostsFrontMatter(databaseId: string): Promise<PageMe
       allFrontMatter.push({
         title: page.properties.Post.title[0].plain_text,
         createdAt: page.created_time,
+        lastModifiedAt: page.last_edited_time,
         slug:
           page.properties.Post.title[0].plain_text.replace(/ /g, '-') +
           '-' +
