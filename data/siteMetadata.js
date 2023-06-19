@@ -5,7 +5,7 @@ const siteMetadata = {
   description: 'Food and Recipes from Healthy-ish',
   language: 'en-us',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://www.healthy-ish.app/',
+  siteUrl: 'https://www.healthy-ish.app',
   siteRepo: 'https://github.com/timlrx/tailwind-nextjs-starter-blog',
   siteLogo: '/static/images/logo.svg',
   image: '/static/images/avatar.png',
