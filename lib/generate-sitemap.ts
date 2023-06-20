@@ -18,15 +18,16 @@ export const generateSitemap = async () => {
     '!pages/_*.tsx',
     '!pages/api',
   ])
-  console.log(databaseId)
-  console.log(databaseId)
   const recipesData = await getDatabase(databaseId)
 
   recipesData.forEach((recipePage) => {
     const slug = recipePage.properties.Post.title.map(
       (slug) => slug.plain_text.replace(/ /g, '-') + '-' + recipePage.id.replaceAll('-', '')
     )
-    pages.push('/recipes/' + slug[0])
+    const status = recipePage.properties.Status.status.name
+    if (status !== 'Draft') {
+      pages.push('/recipes/' + slug[0])
+    }
   })
 
   const sitemap = `

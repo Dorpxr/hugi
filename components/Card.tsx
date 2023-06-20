@@ -19,7 +19,7 @@ const Card = ({ title, imgSrc, href, tags, cookTime }) => (
         <div className="flex flex-wrap">
           {tags && tags.length > 0 && <Tag key={tags[0]} text={tags[0]} />}
         </div>
-        <div className="flex text-gray-500 dark:text-gray-400">
+        <div className="flex self-center text-gray-500 dark:text-gray-400">
           <AppIcon kind="clock" size={5} />
           <p className="pl-1 text-sm uppercase">{formatTime(cookTime)}</p>
         </div>
