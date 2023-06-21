@@ -5,16 +5,28 @@ import { getAllPostsFrontMatter } from '@/lib/notion/getOps'
 import { databaseId } from '@/lib/notion/client'
 import Card from '@/components/Card'
 import { HeroBlurb } from '@/components/HeroBlurb'
+import { PageMetaData } from '@/lib/notion/interfaces/recipePageMetaData.interface'
+import { GetStaticProps, InferGetStaticPropsType } from 'next'
+import { getPopularRecipes } from '@/lib/recipes/popular'
 
 const MAX_DISPLAY = 3
 
-export async function getStaticProps() {
-  const posts = await getAllPostsFrontMatter(databaseId)
-
-  return { props: { posts } }
+type Props = {
+  latestRecipes: PageMetaData[]
+  popularRecipes: PageMetaData[]
 }
 
-export default function Home({ posts }) {
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const latestRecipes = await getAllPostsFrontMatter(databaseId)
+  const popularRecipes = await getPopularRecipes()
+
+  return { props: { latestRecipes, popularRecipes } }
+}
+
+export default function Home({
+  latestRecipes,
+  popularRecipes,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
@@ -22,13 +34,13 @@ export default function Home({ posts }) {
         <div className="flex justify-between pb-3">
           <div className="flex flex-col">
             <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 md:text-3xl md:leading-14">
-              Latest
+              Latest Recipes
             </h1>
             <p className="hidden text-lg leading-7 text-gray-500 dark:text-gray-400 md:block">
               {siteMetadata.description}
             </p>
           </div>
-          {posts.length > MAX_DISPLAY && (
+          {latestRecipes.length > MAX_DISPLAY && (
             <div className="flex self-end text-base font-medium leading-6">
               <Link
                 href="/recipes"
@@ -42,9 +54,9 @@ export default function Home({ posts }) {
         </div>
         <div>
           <ul className="flex overflow-x-scroll pt-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:overflow-x-auto">
-            {!posts.length && 'No posts found.'}
-            {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
-              const { slug, title, featureImage, tags, cookTime } = frontMatter
+            {!latestRecipes.length && 'No latest recipes found.'}
+            {latestRecipes.slice(0, MAX_DISPLAY).map((post) => {
+              const { slug, title, featureImage, tags, cookTime } = post
               return (
                 <li key={slug} className="min-w-[70%] pr-4 sm:min-w-0 sm:pr-0 md:w-full">
                   <article className="h-full">
@@ -62,6 +74,30 @@ export default function Home({ posts }) {
           </ul>
         </div>
         <HeroBlurb />
+        <div>
+          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 md:text-3xl md:leading-14">
+            Popular Recipes
+          </h1>
+          <ul className="flex overflow-x-scroll pt-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:overflow-x-auto">
+            {!popularRecipes.length && 'No popular recipes found.'}
+            {popularRecipes.slice(0, MAX_DISPLAY).map((post) => {
+              const { slug, title, featureImage, tags, cookTime } = post
+              return (
+                <li key={slug} className="min-w-[70%] pr-4 sm:min-w-0 sm:pr-0 md:w-full">
+                  <article className="h-full">
+                    <Card
+                      title={title}
+                      imgSrc={featureImage}
+                      href={`${slug}`}
+                      tags={tags}
+                      cookTime={cookTime}
+                    />
+                  </article>
+                </li>
+              )
+            })}
+          </ul>
+        </div>
       </div>
     </>
   )

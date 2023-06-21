@@ -43,7 +43,7 @@ export const getStaticProps: GetStaticProps = async ({ params: { slug } }) => {
   const status = page.properties.Status.status.name
   const cookTime = page.properties.CookTime
   const summary = page.properties.Summary.rich_text[0].text.content
-  const featureImage = page.properties.FeatureImage.files[0].file.url
+  const featureImage = page.properties?.FeatureImage?.files[0]?.file?.url ?? '/static/banner.jpeg'
   const lastModifiedAt = page.last_edited_time.split('T')[0].toString()
   const filePath = path.join(process.cwd(), 'data', 'authors', 'default.md')
   const source = readFileSync(filePath, 'utf-8').toString()
