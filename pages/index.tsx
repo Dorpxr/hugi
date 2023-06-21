@@ -31,7 +31,7 @@ export default function Home({
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
       <div>
-        <div className="flex justify-between pb-3">
+        <div className="flex justify-between">
           <div className="flex flex-col">
             <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 md:text-3xl md:leading-14">
               Latest Recipes
