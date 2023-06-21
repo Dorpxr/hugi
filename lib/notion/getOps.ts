@@ -15,8 +15,6 @@ export async function getDatabase(id: string): Promise<RecipesDatabase[]> {
     database_id: id,
   })
   const results = response.results as RecipesDatabase[]
-  // write data to file for debugging
-  fs.writeFileSync('mocks/recipesDatabase.json', JSON.stringify(results, null, 2))
   return results
 }
 
@@ -25,8 +23,6 @@ export async function getPage(id: string): Promise<RecipePage> {
     page_id: id,
   })
   const results = response as RecipePage
-  // write data to file for debugging
-  fs.writeFileSync('mocks/recipesPage.json', JSON.stringify(results, null, 2))
   return results
 }
 
@@ -55,7 +51,5 @@ export async function getAllPostsFrontMatter(databaseId: string): Promise<PageMe
   }
 
   const sortedFrontMatter = allFrontMatter.sort((a, b) => dateSortDesc(a.createdAt, b.createdAt))
-  // write data to file for debugging
-  fs.writeFileSync('mocks/recipesFrontMatter.json', JSON.stringify(sortedFrontMatter, null, 2))
   return sortedFrontMatter
 }
