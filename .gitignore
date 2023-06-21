@@ -34,3 +34,11 @@ yarn-error.log*
 .env.development.local
 .env.test.local
 .env.production.local
+
+# local credentials
+
+credentials.json
+
+# mock data
+
+/mocks

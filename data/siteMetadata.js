@@ -20,6 +20,7 @@ const siteMetadata = {
   locale: 'en-US',
   analytics: {
     googleAnalyticsId: 'G-BMJ5E4W9GX', // e.g. UA-000000-2 or G-XXXXXXX
+    googleAnalyticsPropertyId: '387411599',
   },
   newsletter: {
     // supports mailchimp, buttondown, convertkit, klaviyo, revue, emailoctopus
