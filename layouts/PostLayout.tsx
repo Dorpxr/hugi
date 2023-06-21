@@ -9,7 +9,7 @@ import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
 import { PageMetaData } from '@/lib/recipes/interfaces/recipe-metadata.interface'
-import { CookTime } from '@/components/CookTime'
+import { RecipeDataDisplay } from '@/components/RecipeDataDisplay'
 
 const postDateTemplate: Intl.DateTimeFormatOptions = {
   weekday: 'long',
@@ -36,6 +36,7 @@ export default function PostLayout({
     prepTime,
     cookTime,
     totalTime,
+    servings,
   },
   authorDetails,
   children,
@@ -118,7 +119,12 @@ export default function PostLayout({
               <div className="relative">
                 <Image src={featureImage} width={960} height={540} alt={title} />
               </div>
-              <CookTime prepTime={prepTime} cookTime={cookTime} totalTime={totalTime} />
+              <RecipeDataDisplay
+                prepTime={prepTime}
+                cookTime={cookTime}
+                totalTime={totalTime}
+                servings={servings}
+              />
               <div className="prose max-w-none pt-10 pb-8 dark:prose-dark">{children}</div>
             </div>
             <footer>

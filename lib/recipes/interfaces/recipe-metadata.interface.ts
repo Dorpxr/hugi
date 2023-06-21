@@ -10,4 +10,5 @@ export interface PageMetaData {
   cookTime: number
   prepTime: number
   totalTime: number
+  servings: number
 }

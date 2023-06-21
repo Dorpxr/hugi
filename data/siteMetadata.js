@@ -75,6 +75,9 @@ const siteMetadata = {
       shortname: process.env.NEXT_PUBLIC_DISQUS_SHORTNAME,
     },
   },
+  featureFlags: {
+    servingsMultiplier: false,
+  },
 }
 
 module.exports = siteMetadata

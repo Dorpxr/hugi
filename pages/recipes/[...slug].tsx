@@ -65,6 +65,7 @@ export default function Recipe({
   summary,
   featureImage,
   lastModifiedAt,
+  servings,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
@@ -84,6 +85,7 @@ export default function Recipe({
             totalTime,
             summary,
             featureImage,
+            servings,
           }}
           authorDetails={authorDetails}
         />

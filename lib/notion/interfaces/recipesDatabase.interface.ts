@@ -28,16 +28,27 @@ export interface Properties {
   Summary: Summary
   Status: Status
   FeatureImage: FeatureImage
-  CookTime: Time
+  CookTime: CookTime
   Tags: Tags
-  PrepTime: Time
+  Servings: CookTime
+  PrepTime: CookTime
   Post: Post
 }
 
-export interface Time {
-  id: string
-  type: string
+export interface CookTime {
+  id: ID
+  type: Type
   number: number | null
+}
+
+export enum ID {
+  AhCV = 'ahCV',
+  C3Dv = '~C%3Dv',
+  S6060S = 's%60%60S',
+}
+
+export enum Type {
+  Number = 'number',
 }
 
 export interface FeatureImage {
