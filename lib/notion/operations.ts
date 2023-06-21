@@ -73,5 +73,6 @@ export function pageToMetaData(slug: string, page: RecipePage): PageMetaData {
     summary: page.properties.Summary.rich_text[0].text.content,
     featureImage: page.properties?.FeatureImage?.files[0]?.file?.url ?? '/static/banner.jpeg',
     lastModifiedAt: page.last_edited_time.split('T')[0].toString(),
+    servings: page.properties.Servings.number,
   }
 }

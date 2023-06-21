@@ -28,13 +28,14 @@ export interface Properties {
   Summary: Summary
   Status: Status
   FeatureImage: FeatureImage
-  CookTime: Time
+  CookTime: CookTime
   Tags: Tags
-  PrepTime: Time
+  Servings: CookTime
+  PrepTime: CookTime
   Post: Post
 }
 
-export interface Time {
+export interface CookTime {
   id: string
   type: string
   number: number
