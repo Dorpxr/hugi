@@ -8,4 +8,6 @@ export interface PageMetaData {
   summary: string
   featureImage: string
   cookTime: number
+  prepTime: number
+  totalTime: number
 }

@@ -4,7 +4,7 @@ import PageTitle from '@/components/PageTitle'
 import { MDXLayoutRenderer } from '@/components/MDXComponents'
 import { processContent } from '@/lib/mdx'
 import { NotionToMarkdown } from 'notion-to-md'
-import { getDatabase, getPage, pageToMetaData } from '@/lib/notion/getOps'
+import { getDatabase, getPage, pageToMetaData } from '@/lib/notion/operations'
 import path from 'path'
 import { readFileSync } from 'fs'
 import matter from 'gray-matter'
@@ -37,7 +37,7 @@ export const getStaticProps: GetStaticProps = async ({ params: { slug } }) => {
   const content = await n2m.pageToMarkdown(pageId)
   const contentString = await n2m.toMarkdownString(content)
   const processedContent = await processContent(contentString)
-  const pageMetaData = pageToMetaData(slug as string, page)
+  const pageMetaData = pageToMetaData(slug[0], page)
   const filePath = path.join(process.cwd(), 'data', 'authors', 'default.md')
   const source = readFileSync(filePath, 'utf-8').toString()
   const { data: authorDetails } = matter(source) as unknown as { data: Author }
@@ -60,6 +60,8 @@ export default function Recipe({
   createdAt,
   status,
   cookTime,
+  prepTime,
+  totalTime,
   summary,
   featureImage,
   lastModifiedAt,
@@ -78,6 +80,8 @@ export default function Recipe({
             tags,
             status,
             cookTime,
+            prepTime,
+            totalTime,
             summary,
             featureImage,
           }}

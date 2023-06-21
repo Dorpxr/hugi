@@ -7,7 +7,7 @@ import TOCInline from './TOCInline'
 import Pre from './Pre'
 import { BlogNewsletterForm } from './NewsletterForm'
 import { Author } from '@/lib/types/author.interface'
-import { PageMetaData } from '@/lib/notion/interfaces/recipePageMetaData.interface'
+import { PageMetaData } from '@/lib/recipes/interfaces/recipe-metadata.interface'
 
 export const MDXComponents = {
   Image,

@@ -2,7 +2,7 @@ import { RecipesDatabase } from '@/lib/notion/interfaces/recipesDatabase.interfa
 import { RecipePage } from '@/lib/notion/interfaces/recipePage.interface'
 import { notionClient } from './client'
 import fs from 'fs'
-import { PageMetaData } from './interfaces/recipePageMetaData.interface'
+import { PageMetaData } from '../recipes/interfaces/recipe-metadata.interface'
 
 export function dateSortDesc(a, b) {
   if (a > b) return -1
@@ -15,6 +15,9 @@ export async function getDatabase(id: string): Promise<RecipesDatabase[]> {
     database_id: id,
   })
   const results = response.results as RecipesDatabase[]
+  if (process.env.DEBUG === 'true') {
+    fs.writeFileSync('mocks/recipesDatabase.json', JSON.stringify(results, null, 2)) // write data to file for debugging
+  }
   return results
 }
 
@@ -23,6 +26,9 @@ export async function getPage(id: string): Promise<RecipePage> {
     page_id: id,
   })
   const results = response as RecipePage
+  if (process.env.DEBUG === 'true') {
+    fs.writeFileSync('mocks/recipesPage.json', JSON.stringify(results, null, 2))
+  }
   return results
 }
 
@@ -43,6 +49,9 @@ export async function getAllPostsFrontMatter(databaseId: string): Promise<PageMe
   }
 
   const sortedFrontMatter = allFrontMatter.sort((a, b) => dateSortDesc(a.createdAt, b.createdAt))
+  if (process.env.DEBUG === 'true') {
+    fs.writeFileSync('mocks/recipesFrontMatter.json', JSON.stringify(sortedFrontMatter, null, 2))
+  }
   return sortedFrontMatter
 }
 
@@ -59,6 +68,8 @@ export function pageToMetaData(slug: string, page: RecipePage): PageMetaData {
     createdAt: page.created_time.split('T')[0].toString(),
     status: page.properties.Status.status.name,
     cookTime: page.properties.CookTime.number,
+    prepTime: page.properties.PrepTime.number,
+    totalTime: page.properties.CookTime.number + page.properties.PrepTime.number,
     summary: page.properties.Summary.rich_text[0].text.content,
     featureImage: page.properties?.FeatureImage?.files[0]?.file?.url ?? '/static/banner.jpeg',
     lastModifiedAt: page.last_edited_time.split('T')[0].toString(),

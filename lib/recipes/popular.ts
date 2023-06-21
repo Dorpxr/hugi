@@ -1,10 +1,10 @@
 import { analyticsDataClient } from '../google/client'
 import { PopularRecipes } from './interfaces/popular-recipes.interface'
-import { getPage, pageToMetaData } from '../notion/getOps'
-import { PageMetaData } from '../notion/interfaces/recipePageMetaData.interface'
+import { getPage, pageToMetaData } from '../notion/operations'
+import { PageMetaData } from './interfaces/recipe-metadata.interface'
 import siteMetadata from '@/data/siteMetadata'
 
-export const getPopularRecipes: () => Promise<PageMetaData[]> = async () => {
+export async function getPopularRecipes(): Promise<PageMetaData[]> {
   try {
     const result = await analyticsDataClient.runReport({
       property: `properties/${siteMetadata.analytics.googleAnalyticsPropertyId}`,
@@ -26,7 +26,8 @@ export const getPopularRecipes: () => Promise<PageMetaData[]> = async () => {
       ],
     })
     const unrankedRecipes: PopularRecipes[] = []
-    result[0].rows.forEach((row) => {
+    const rows = result[0].rows
+    for (const row of rows) {
       if (row.dimensionValues[0].value.includes('/recipes/')) {
         const views = row.metricValues[0].value
         const slug = row.dimensionValues[0].value
@@ -38,7 +39,8 @@ export const getPopularRecipes: () => Promise<PageMetaData[]> = async () => {
           views,
         })
       }
-    })
+    }
+
     const unrankedRecipesPosts: PageMetaData[] = []
     for (const recipe of unrankedRecipes) {
       const page = await getPage(recipe.pageId)

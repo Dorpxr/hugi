@@ -2,9 +2,9 @@ import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import siteMetadata from '@/data/siteMetadata'
 import ListLayout from '@/layouts/ListLayout'
 import { PageSEO } from '@/components/SEO'
-import { getAllPostsFrontMatter } from '@/lib/notion/getOps'
+import { getAllPostsFrontMatter } from '@/lib/notion/operations'
 import { databaseId } from '@/lib/notion/client'
-import { PageMetaData } from '@/lib/notion/interfaces/recipePageMetaData.interface'
+import { PageMetaData } from '@/lib/recipes/interfaces/recipe-metadata.interface'
 
 export const POSTS_PER_PAGE = 5
 

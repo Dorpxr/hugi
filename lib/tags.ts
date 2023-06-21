@@ -1,4 +1,4 @@
-import { getAllPostsFrontMatter } from '@/lib/notion/getOps'
+import { getAllPostsFrontMatter } from '@/lib/notion/operations'
 import kebabCase from '@/lib/utils/kebabCase'
 import { databaseId } from './notion/client'
 

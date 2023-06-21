@@ -4,7 +4,7 @@ import matter from 'gray-matter'
 import prettier from 'prettier'
 import siteMetadata from '@/data/siteMetadata'
 import { databaseId } from '../lib/notion/client'
-import { getDatabase } from '../lib/notion/getOps'
+import { getDatabase } from './notion/operations'
 
 export const generateSitemap = async () => {
   const prettierConfig = await prettier.resolveConfig('./.prettierrc.js')

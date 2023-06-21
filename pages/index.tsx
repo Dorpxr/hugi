@@ -1,11 +1,11 @@
 import Link from '@/components/Link'
 import { PageSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
-import { getAllPostsFrontMatter } from '@/lib/notion/getOps'
+import { getAllPostsFrontMatter } from '@/lib/notion/operations'
 import { databaseId } from '@/lib/notion/client'
 import Card from '@/components/Card'
 import { HeroBlurb } from '@/components/HeroBlurb'
-import { PageMetaData } from '@/lib/notion/interfaces/recipePageMetaData.interface'
+import { PageMetaData } from '@/lib/recipes/interfaces/recipe-metadata.interface'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { getPopularRecipes } from '@/lib/recipes/popular'
 
@@ -56,7 +56,7 @@ export default function Home({
           <ul className="flex overflow-x-scroll pt-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:overflow-x-auto">
             {!latestRecipes.length && 'No latest recipes found.'}
             {latestRecipes.slice(0, MAX_DISPLAY).map((post) => {
-              const { slug, title, featureImage, tags, cookTime } = post
+              const { slug, title, featureImage, tags, totalTime } = post
               return (
                 <li key={slug} className="min-w-[70%] pr-4 sm:min-w-0 sm:pr-0 md:w-full">
                   <article className="h-full">
@@ -65,7 +65,7 @@ export default function Home({
                       imgSrc={featureImage}
                       href={`/recipes/${slug}`}
                       tags={tags}
-                      cookTime={cookTime}
+                      time={totalTime}
                     />
                   </article>
                 </li>
@@ -81,7 +81,7 @@ export default function Home({
           <ul className="flex overflow-x-scroll pt-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:overflow-x-auto">
             {!popularRecipes.length && 'No popular recipes found.'}
             {popularRecipes.slice(0, MAX_DISPLAY).map((post) => {
-              const { slug, title, featureImage, tags, cookTime } = post
+              const { slug, title, featureImage, tags, totalTime } = post
               return (
                 <li key={slug} className="min-w-[70%] pr-4 sm:min-w-0 sm:pr-0 md:w-full">
                   <article className="h-full">
@@ -90,7 +90,7 @@ export default function Home({
                       imgSrc={featureImage}
                       href={`${slug}`}
                       tags={tags}
-                      cookTime={cookTime}
+                      time={totalTime}
                     />
                   </article>
                 </li>

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Pagination from '@/components/Pagination'
-import { PageMetaData } from '@/lib/notion/interfaces/recipePageMetaData.interface'
+import { PageMetaData } from '@/lib/recipes/interfaces/recipe-metadata.interface'
 import Card from '@/components/Card'
 
 interface Props {
@@ -15,8 +15,8 @@ interface Props {
 
 export default function ListLayout({ posts, title, initialDisplayPosts = [], pagination }: Props) {
   const [searchValue, setSearchValue] = useState('')
-  const filteredBlogPosts = posts.filter((frontMatter) => {
-    const searchContent = frontMatter.title + frontMatter.summary + frontMatter.tags.join(' ')
+  const filteredBlogPosts = posts.filter((post) => {
+    const searchContent = post.title + post.summary + post.tags.join(' ')
     return searchContent.toLowerCase().includes(searchValue.toLowerCase())
   })
 
@@ -57,8 +57,8 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
         </div>
         <ul className="grid grid-cols-1 gap-4 pt-6 md:grid-cols-3">
           {!filteredBlogPosts.length && 'No recipes found.'}
-          {displayPosts.map((frontMatter) => {
-            const { slug, title, tags, featureImage, cookTime } = frontMatter
+          {displayPosts.map((post) => {
+            const { slug, title, tags, featureImage, totalTime } = post
             return (
               <li key={slug} className="w-full">
                 <article className="h-full">
@@ -67,7 +67,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                     imgSrc={featureImage}
                     href={`/recipes/${slug}`}
                     tags={tags}
-                    cookTime={cookTime}
+                    time={totalTime}
                   />
                 </article>
               </li>

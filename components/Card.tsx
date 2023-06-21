@@ -4,7 +4,15 @@ import Tag from './Tag'
 import AppIcon from './app-icons'
 import Image from 'next/image'
 
-const Card = ({ title, imgSrc, href, tags, cookTime }) => (
+type Props = {
+  title: string
+  imgSrc: string
+  href: string
+  tags: string[]
+  time: number
+}
+
+const Card = ({ title, imgSrc, href, tags, time }: Props) => (
   <div className="overflow-hidden rounded-lg">
     <div className="relative">
       <Image src={imgSrc} width={960} height={540} alt={title} />
@@ -21,7 +29,7 @@ const Card = ({ title, imgSrc, href, tags, cookTime }) => (
         </div>
         <div className="flex self-center text-gray-500 dark:text-gray-400">
           <AppIcon kind="clock" size={5} />
-          <p className="pl-1 text-sm uppercase">{formatTime(cookTime)}</p>
+          <p className="pl-1 text-sm uppercase">{formatTime(time)}</p>
         </div>
       </div>
     </div>
