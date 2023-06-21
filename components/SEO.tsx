@@ -106,7 +106,7 @@ export const BlogSEO = ({
       : images
 
   const featuredImages = imagesArr.map((img) => {
-    const cachedImg = `${siteMetadata.siteUrl}/_next/image?url=${img}`
+    const cachedImg = `${siteMetadata.siteUrl}/_next/image?url=${encodeURIComponent(img)}`
     return {
       '@type': 'ImageObject',
       url: img.includes('http') ? cachedImg : siteMetadata.siteUrl + img,
