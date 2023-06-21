@@ -33,23 +33,34 @@ export async function getAllPostsFrontMatter(databaseId: string): Promise<PageMe
 
   for (const page of database) {
     if (page.properties.Status.status.name !== 'Draft') {
-      allFrontMatter.push({
-        title: page.properties.Post.title[0].plain_text,
-        createdAt: page.created_time,
-        lastModifiedAt: page.last_edited_time,
-        slug:
-          page.properties.Post.title[0].plain_text.replace(/ /g, '-') +
-          '-' +
-          page.id.replaceAll('-', ''),
-        tags: page.properties.Tags.multi_select.map((tag) => tag.name),
-        status: page.properties.Status.status.name,
-        summary: page.properties.Summary.rich_text[0].text.content,
-        featureImage: page.properties.FeatureImage.files[0].file.url,
-        cookTime: page.properties.CookTime.number,
-      })
+      const slug =
+        page.properties.Post.title[0].plain_text.replace(/ /g, '-') +
+        '-' +
+        page.id.replaceAll('-', '')
+      const metaData = pageToMetaData(slug, page)
+      allFrontMatter.push(metaData)
     }
   }
 
   const sortedFrontMatter = allFrontMatter.sort((a, b) => dateSortDesc(a.createdAt, b.createdAt))
   return sortedFrontMatter
+}
+
+export function pageToMetaData(slug: string, page: RecipePage): PageMetaData {
+  let title = slug.toString().split('-').slice(0, -1).join(' ')
+  if (slug.includes('/recipes/')) {
+    title = slug.toString().split('/')[2].split('-').slice(0, -1).join(' ')
+  }
+
+  return {
+    slug,
+    title,
+    tags: page.properties.Tags.multi_select.map((tag) => tag.name),
+    createdAt: page.created_time.split('T')[0].toString(),
+    status: page.properties.Status.status.name,
+    cookTime: page.properties.CookTime.number,
+    summary: page.properties.Summary.rich_text[0].text.content,
+    featureImage: page.properties?.FeatureImage?.files[0]?.file?.url ?? '/static/banner.jpeg',
+    lastModifiedAt: page.last_edited_time.split('T')[0].toString(),
+  }
 }

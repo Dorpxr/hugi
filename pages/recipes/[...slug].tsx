@@ -4,7 +4,7 @@ import PageTitle from '@/components/PageTitle'
 import { MDXLayoutRenderer } from '@/components/MDXComponents'
 import { processContent } from '@/lib/mdx'
 import { NotionToMarkdown } from 'notion-to-md'
-import { getDatabase, getPage } from '@/lib/notion/getOps'
+import { getDatabase, getPage, pageToMetaData } from '@/lib/notion/getOps'
 import path from 'path'
 import { readFileSync } from 'fs'
 import matter from 'gray-matter'
@@ -37,14 +37,7 @@ export const getStaticProps: GetStaticProps = async ({ params: { slug } }) => {
   const content = await n2m.pageToMarkdown(pageId)
   const contentString = await n2m.toMarkdownString(content)
   const processedContent = await processContent(contentString)
-  const title = slug.toString().split('-').slice(0, -1).join(' ')
-  const tags = page.properties.Tags.multi_select.map((tag) => tag.name)
-  const createdAt = page.created_time.split('T')[0].toString()
-  const status = page.properties.Status.status.name
-  const cookTime = page.properties.CookTime
-  const summary = page.properties.Summary.rich_text[0].text.content
-  const featureImage = page.properties?.FeatureImage?.files[0]?.file?.url ?? '/static/banner.jpeg'
-  const lastModifiedAt = page.last_edited_time.split('T')[0].toString()
+  const pageMetaData = pageToMetaData(slug as string, page)
   const filePath = path.join(process.cwd(), 'data', 'authors', 'default.md')
   const source = readFileSync(filePath, 'utf-8').toString()
   const { data: authorDetails } = matter(source) as unknown as { data: Author }
@@ -52,16 +45,8 @@ export const getStaticProps: GetStaticProps = async ({ params: { slug } }) => {
   return {
     props: {
       content: processedContent.mdxSource,
-      slug,
       authorDetails: [authorDetails],
-      title,
-      tags,
-      createdAt,
-      status,
-      cookTime,
-      summary,
-      featureImage,
-      lastModifiedAt,
+      ...pageMetaData,
     },
   }
 }
