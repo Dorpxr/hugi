@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import siteMetadata from '@/data/siteMetadata'
+import { Author } from '@/lib/types/author.interface'
 
 const CommonSEO = ({ title, description, ogType, ogImage, twImage, canonicalUrl }) => {
   const router = useRouter()
@@ -74,9 +75,7 @@ export const TagSEO = ({ title, description }) => {
 }
 
 interface BlogSEOProps {
-  authorDetails: {
-    name: string
-  }[]
+  authorDetails: Author[]
   title: string
   summary: string
   date: string
@@ -107,9 +106,10 @@ export const BlogSEO = ({
       : images
 
   const featuredImages = imagesArr.map((img) => {
+    const cachedImg = `${siteMetadata.siteUrl}/_next/image?url=${url}`
     return {
       '@type': 'ImageObject',
-      url: img.includes('http') ? img : siteMetadata.siteUrl + img,
+      url: img.includes('http') ? cachedImg : siteMetadata.siteUrl + img,
     }
   })
 
