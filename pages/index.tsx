@@ -20,7 +20,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   const latestRecipes = await getAllPostsFrontMatter(databaseId)
   const popularRecipes = await getPopularRecipes()
 
-  return { props: { latestRecipes, popularRecipes } }
+  return { props: { latestRecipes, popularRecipes }, revalidate: 2700 }
 }
 
 export default function Home({

@@ -38,7 +38,7 @@ export async function getStaticProps({ params }) {
     fs.writeFileSync(path.join(rssPath, 'feed.xml'), rss)
   }
 
-  return { props: { posts: filteredPosts, tag: params.tag } }
+  return { props: { posts: filteredPosts, tag: params.tag }, revalidate: 2700 }
 }
 
 export default function Tag({ posts, tag }) {
