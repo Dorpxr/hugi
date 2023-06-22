@@ -48,6 +48,7 @@ export const getStaticProps: GetStaticProps = async ({ params: { slug } }) => {
       authorDetails: [authorDetails],
       ...pageMetaData,
     },
+    revalidate: 2700, // 45 minute revalidation to avoid 1 hour notion image expiry
   }
 }
 

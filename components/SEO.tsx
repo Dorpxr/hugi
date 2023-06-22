@@ -105,16 +105,10 @@ export const BlogSEO = ({
       ? [images]
       : images
 
-  const imageWidth = 1080
-  const imageQuality = 75
-
   const featuredImages = imagesArr.map((img) => {
-    const cachedImg = `${siteMetadata.siteUrl}/_next/image?url=${encodeURIComponent(
-      img
-    )}&w=${imageWidth}&q=${imageQuality}`
     return {
       '@type': 'ImageObject',
-      url: img.includes('http') ? cachedImg : siteMetadata.siteUrl + img,
+      url: img.includes('http') ? img : siteMetadata.siteUrl + img,
     }
   })
 

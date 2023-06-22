@@ -25,7 +25,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     totalPages: Math.ceil(posts.length / POSTS_PER_PAGE),
   }
 
-  return { props: { initialDisplayPosts, posts, pagination } }
+  return { props: { initialDisplayPosts, posts, pagination }, revalidate: 2700 }
 }
 
 export default function Recipes({
