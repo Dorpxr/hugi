@@ -1,4 +1,4 @@
-import { GetStaticProps, InferGetStaticPropsType, GetStaticPaths } from 'next'
+import { GetStaticPaths, GetServerSideProps, InferGetServerSidePropsType } from 'next'
 import { databaseId, notionClient } from '@/lib/notion/client'
 import PageTitle from '@/components/PageTitle'
 import { MDXLayoutRenderer } from '@/components/MDXComponents'
@@ -15,23 +15,9 @@ const DEFAULT_LAYOUT = 'PostLayout'
 
 const n2m = new NotionToMarkdown({ notionClient })
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const results = await getDatabase(databaseId)
+export const getServerSideProps: GetServerSideProps = async ({ params: { slug }, res }) => {
+  res.setHeader('Cache-Control', 'public, s-maxage=3300, stale-while-revalidate=3300')
   await generateSitemap()
-
-  return {
-    paths: results.map((page) => ({
-      params: {
-        slug: page.properties.Post.title.map(
-          (slug) => slug.plain_text.replace(/ /g, '-') + '-' + page.id.replaceAll('-', '')
-        ),
-      },
-    })),
-    fallback: false,
-  }
-}
-
-export const getStaticProps: GetStaticProps = async ({ params: { slug } }) => {
   const pageId = slug.toString().split('-').pop()
   const page = await getPage(pageId)
   const content = await n2m.pageToMarkdown(pageId)
@@ -48,7 +34,6 @@ export const getStaticProps: GetStaticProps = async ({ params: { slug } }) => {
       authorDetails: [authorDetails],
       ...pageMetaData,
     },
-    revalidate: 2700, // 45 minute revalidation to avoid 1 hour notion image expiry
   }
 }
 
@@ -67,7 +52,7 @@ export default function Recipe({
   featureImage,
   lastModifiedAt,
   servings,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <>
       {status !== 'Draft' ? (

@@ -6,7 +6,7 @@ import { databaseId } from '@/lib/notion/client'
 import Card from '@/components/Card'
 import { HeroBlurb } from '@/components/HeroBlurb'
 import { PageMetaData } from '@/lib/recipes/interfaces/recipe-metadata.interface'
-import { GetStaticProps, InferGetStaticPropsType } from 'next'
+import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
 import { getPopularRecipes } from '@/lib/recipes/popular'
 
 const MAX_DISPLAY = 3
@@ -16,17 +16,17 @@ type Props = {
   popularRecipes: PageMetaData[]
 }
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
+export const getServerSideProps: GetServerSideProps<Props> = async () => {
   const latestRecipes = await getAllPostsFrontMatter(databaseId)
   const popularRecipes = await getPopularRecipes()
 
-  return { props: { latestRecipes, popularRecipes }, revalidate: 2700 }
+  return { props: { latestRecipes, popularRecipes } }
 }
 
 export default function Home({
   latestRecipes,
   popularRecipes,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
@@ -40,7 +40,7 @@ export default function Home({
               {siteMetadata.description}
             </p>
           </div>
-          {latestRecipes.length > MAX_DISPLAY && (
+          {latestRecipes?.length > MAX_DISPLAY && (
             <div className="flex self-end text-base font-medium leading-6">
               <Link
                 href="/recipes"
@@ -54,8 +54,8 @@ export default function Home({
         </div>
         <div>
           <ul className="flex overflow-x-scroll pt-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:overflow-x-auto">
-            {!latestRecipes.length && 'No latest recipes found.'}
-            {latestRecipes.slice(0, MAX_DISPLAY).map((post) => {
+            {!latestRecipes?.length && 'No latest recipes found.'}
+            {latestRecipes?.slice(0, MAX_DISPLAY).map((post) => {
               const { slug, title, featureImage, tags, totalTime } = post
               return (
                 <li key={slug} className="min-w-[70%] pr-4 sm:min-w-0 sm:pr-0 md:w-full">
@@ -79,8 +79,8 @@ export default function Home({
             Popular Recipes
           </h1>
           <ul className="flex overflow-x-scroll pt-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:overflow-x-auto">
-            {!popularRecipes.length && 'No popular recipes found.'}
-            {popularRecipes.slice(0, MAX_DISPLAY).map((post) => {
+            {!popularRecipes?.length && 'No popular recipes found.'}
+            {popularRecipes?.slice(0, MAX_DISPLAY).map((post) => {
               const { slug, title, featureImage, tags, totalTime } = post
               return (
                 <li key={slug} className="min-w-[70%] pr-4 sm:min-w-0 sm:pr-0 md:w-full">
