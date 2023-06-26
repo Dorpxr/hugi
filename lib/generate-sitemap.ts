@@ -57,7 +57,10 @@ export const generateSitemap = async () => {
                   .replace('/feed.xml', '')
                 const route = path === '/index' ? '' : path
 
-                if (page.search('pages/404.') > -1 || page.search(`pages/blog/[...slug].`) > -1) {
+                if (
+                  page.search('pages/404.') > -1 ||
+                  page.search(`pages/recipes/[...slug].`) > -1
+                ) {
                   return
                 }
                 return `
@@ -76,5 +79,5 @@ export const generateSitemap = async () => {
   })
 
   // eslint-disable-next-line no-sync
-  fs.writeFileSync('public/sitemap.xml', formatted)
+  fs.writeFileSync('/sitemap.xml', formatted)
 }

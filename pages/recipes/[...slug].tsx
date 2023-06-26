@@ -1,15 +1,14 @@
-import { GetStaticPaths, GetServerSideProps, InferGetServerSidePropsType } from 'next'
-import { databaseId, notionClient } from '@/lib/notion/client'
+import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
+import { notionClient } from '@/lib/notion/client'
 import PageTitle from '@/components/PageTitle'
 import { MDXLayoutRenderer } from '@/components/MDXComponents'
 import { processContent } from '@/lib/mdx'
 import { NotionToMarkdown } from 'notion-to-md'
-import { getDatabase, getPage, pageToMetaData } from '@/lib/notion/operations'
+import { getPage, pageToMetaData } from '@/lib/notion/operations'
 import path from 'path'
 import { readFileSync } from 'fs'
 import matter from 'gray-matter'
 import { Author } from '@/lib/types/author.interface'
-import { generateSitemap } from '@/lib/generate-sitemap'
 
 const DEFAULT_LAYOUT = 'PostLayout'
 
@@ -17,7 +16,6 @@ const n2m = new NotionToMarkdown({ notionClient })
 
 export const getServerSideProps: GetServerSideProps = async ({ params: { slug }, res }) => {
   res.setHeader('Cache-Control', 'public, s-maxage=3300, stale-while-revalidate=3300')
-  // await generateSitemap()
   const pageId = slug.toString().split('-').pop()
   const page = await getPage(pageId)
   const content = await n2m.pageToMarkdown(pageId)
