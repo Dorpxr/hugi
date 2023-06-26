@@ -17,6 +17,7 @@ export const generateSitemap = async () => {
     '!pages/_*.js',
     '!pages/_*.tsx',
     '!pages/api',
+    '!pages/sitemap.xml.tsx',
   ])
   const recipesData = await getDatabase(databaseId)
 
@@ -79,5 +80,6 @@ export const generateSitemap = async () => {
   })
 
   // eslint-disable-next-line no-sync
-  fs.writeFileSync('/sitemap.xml', formatted)
+  // fs.writeFileSync('/sitemap.xml', formatted)
+  return formatted
 }

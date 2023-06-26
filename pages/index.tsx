@@ -8,7 +8,6 @@ import { HeroBlurb } from '@/components/HeroBlurb'
 import { PageMetaData } from '@/lib/recipes/interfaces/recipe-metadata.interface'
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
 import { getPopularRecipes } from '@/lib/recipes/popular'
-import { generateSitemap } from '@/lib/generate-sitemap'
 
 const MAX_DISPLAY = 3
 
@@ -19,7 +18,6 @@ type Props = {
 
 export const getServerSideProps: GetServerSideProps<Props> = async ({ res }) => {
   res.setHeader('Cache-Control', 'public, s-maxage=3300, stale-while-revalidate=3300')
-  await generateSitemap()
   const latestRecipes = await getAllPostsFrontMatter(databaseId)
   const popularRecipes = await getPopularRecipes()
 
