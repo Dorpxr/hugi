@@ -17,7 +17,7 @@ const n2m = new NotionToMarkdown({ notionClient })
 
 export const getServerSideProps: GetServerSideProps = async ({ params: { slug }, res }) => {
   res.setHeader('Cache-Control', 'public, s-maxage=3300, stale-while-revalidate=3300')
-  await generateSitemap()
+  // await generateSitemap()
   const pageId = slug.toString().split('-').pop()
   const page = await getPage(pageId)
   const content = await n2m.pageToMarkdown(pageId)
