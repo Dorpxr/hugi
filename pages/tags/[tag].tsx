@@ -1,44 +1,28 @@
 import { TagSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
 import ListLayout from '@/layouts/ListLayout'
-import generateRss from '@/lib/generate-rss'
+// import generateRss from '@/lib/generate-rss'
 import { databaseId } from '@/lib/notion/client'
 import { getAllPostsFrontMatter } from '@/lib/notion/operations'
-import { getAllTags } from '@/lib/tags'
 import kebabCase from '@/lib/utils/kebabCase'
-import fs from 'fs'
-import path from 'path'
 
-const root = process.cwd()
-
-export async function getStaticPaths() {
-  const tags = await getAllTags()
-
-  return {
-    paths: Object.keys(tags).map((tag) => ({
-      params: {
-        tag,
-      },
-    })),
-    fallback: false,
-  }
-}
-
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params, res }) {
+  res.setHeader('Cache-Control', 'public, s-maxage=3300, stale-while-revalidate=3300')
   const allPosts = await getAllPostsFrontMatter(databaseId)
   const filteredPosts = allPosts.filter(
     (post) => post.status !== 'Draft' && post.tags.map((t) => kebabCase(t)).includes(params.tag)
   )
 
-  // rss
-  if (filteredPosts.length > 0) {
-    const rss = generateRss(filteredPosts, `tags/${params.tag}/feed.xml`)
-    const rssPath = path.join(root, 'public', 'tags', params.tag)
-    fs.mkdirSync(rssPath, { recursive: true })
-    fs.writeFileSync(path.join(rssPath, 'feed.xml'), rss)
-  }
+  // TODO: do this in a feed.xml.tsx file and SSR it
+  // // rss
+  // if (filteredPosts.length > 0) {
+  //   const rss = generateRss(filteredPosts, `tags/${params.tag}/feed.xml`)
+  //   const rssPath = path.join(root, 'public', 'tags', params.tag)
+  //   fs.mkdirSync(rssPath, { recursive: true })
+  //   fs.writeFileSync(path.join(rssPath, 'feed.xml'), rss)
+  // }
 
-  return { props: { posts: filteredPosts, tag: params.tag }, revalidate: 2700 }
+  return { props: { posts: filteredPosts, tag: params.tag } }
 }
 
 export default function Tag({ posts, tag }) {
