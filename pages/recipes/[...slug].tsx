@@ -1,37 +1,21 @@
-import { GetStaticProps, InferGetStaticPropsType, GetStaticPaths } from 'next'
-import { databaseId, notionClient } from '@/lib/notion/client'
+import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
+import { notionClient } from '@/lib/notion/client'
 import PageTitle from '@/components/PageTitle'
 import { MDXLayoutRenderer } from '@/components/MDXComponents'
 import { processContent } from '@/lib/mdx'
 import { NotionToMarkdown } from 'notion-to-md'
-import { getDatabase, getPage, pageToMetaData } from '@/lib/notion/operations'
+import { getPage, pageToMetaData } from '@/lib/notion/operations'
 import path from 'path'
 import { readFileSync } from 'fs'
 import matter from 'gray-matter'
 import { Author } from '@/lib/types/author.interface'
-import { generateSitemap } from '@/lib/generate-sitemap'
 
 const DEFAULT_LAYOUT = 'PostLayout'
 
 const n2m = new NotionToMarkdown({ notionClient })
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const results = await getDatabase(databaseId)
-  await generateSitemap()
-
-  return {
-    paths: results.map((page) => ({
-      params: {
-        slug: page.properties.Post.title.map(
-          (slug) => slug.plain_text.replace(/ /g, '-') + '-' + page.id.replaceAll('-', '')
-        ),
-      },
-    })),
-    fallback: false,
-  }
-}
-
-export const getStaticProps: GetStaticProps = async ({ params: { slug } }) => {
+export const getServerSideProps: GetServerSideProps = async ({ params: { slug }, res }) => {
+  res.setHeader('Cache-Control', 'public, s-maxage=3300, stale-while-revalidate=3300')
   const pageId = slug.toString().split('-').pop()
   const page = await getPage(pageId)
   const content = await n2m.pageToMarkdown(pageId)
@@ -48,7 +32,6 @@ export const getStaticProps: GetStaticProps = async ({ params: { slug } }) => {
       authorDetails: [authorDetails],
       ...pageMetaData,
     },
-    revalidate: 2700, // 45 minute revalidation to avoid 1 hour notion image expiry
   }
 }
 
@@ -67,7 +50,7 @@ export default function Recipe({
   featureImage,
   lastModifiedAt,
   servings,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <>
       {status !== 'Draft' ? (
