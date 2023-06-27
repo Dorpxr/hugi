@@ -90,8 +90,8 @@ export default function PostLayout({
                   ))}
                 </ul>
               </dd>
-              <div className="flex justify-between pt-8 xl:flex-col">
-                <div className="xl:pb-6">
+              <div className="flex  justify-center pt-8 xl:flex-col xl:justify-between">
+                <div className="hidden xl:block xl:pb-6">
                   <dt className="text-center text-sm xl:text-left">Published on</dt>
                   <dd className="pr-1 text-sm font-medium leading-6 text-gray-500 dark:text-gray-400 sm:pr-0 sm:text-base">
                     <time dateTime={createdAt}>
