@@ -54,31 +54,32 @@ export const RecipeDataDisplay = ({
           </button>
         </div>
       ) : null}
-      <dl className="flex pt-10">
-        <div className="w-1/3 sm:w-1/6">
+      {/* <dl className="flex pt-10">
+        
+      </dl> */}
+
+      <dl className="grid grid-cols-2 grid-rows-2 gap-6 pt-10 text-sm font-medium leading-6 text-gray-500 dark:text-gray-400 sm:text-base md:grid-cols-4 md:grid-rows-1 md:gap-0">
+        <div className="border-b border-gray-500 pb-1 text-left dark:border-gray-400 md:border-l md:border-b-0 md:px-4">
           <dt className="text-sm text-black dark:text-white">Servings</dt>
           <dd className="flex items-center self-center text-sm font-medium uppercase leading-6 text-gray-500 dark:text-gray-400 sm:text-base">
             <span className="pl-1">{servings ?? initialServings}</span>
           </dd>
         </div>
-      </dl>
-
-      <dl className="flex pt-10 text-sm font-medium leading-6 text-gray-500 dark:text-gray-400 sm:text-base">
-        <div className="w-1/3 sm:w-1/6">
+        <div className="border-b border-gray-600 border-gray-500 pb-1 dark:border-gray-400 md:border-b-0 md:border-l md:px-4">
           <dt className="text-sm text-black dark:text-white">Prep Time</dt>
           <dd className="flex items-center self-center uppercase">
             <AppIcon kind="clock" size={5} />
             <span className="pl-1">{formatTime(prepTime)}</span>
           </dd>
         </div>
-        <div className="w-1/3 sm:w-1/6">
+        <div className="border-b border-gray-600 border-gray-500 pb-1 dark:border-gray-400 md:border-b-0 md:border-l md:px-4">
           <dt className="text-sm text-black dark:text-white">Cook Time</dt>
           <dd className="flex items-center self-center uppercase">
             <AppIcon kind="clock" size={5} />
             <span className="pl-1">{formatTime(cookTime)}</span>
           </dd>
         </div>
-        <div className="w-1/3 sm:w-1/6">
+        <div className="border-b border-gray-600 border-gray-500 pb-1 dark:border-gray-400 md:border-b-0 md:border-l md:px-4">
           <dt className="text-sm text-black dark:text-white">Total Time</dt>
           <dd className="flex items-center self-center uppercase">
             <AppIcon kind="clock" size={5} />

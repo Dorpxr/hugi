@@ -5,7 +5,7 @@ import Image from 'next/image'
 export const HeroBlurb = () => {
   return (
     <div className="flex flex-col py-12 md:flex-row">
-      <div className="w-full overflow-hidden rounded-lg bg-neutral-300 p-12 md:w-5/12">
+      <div className="w-full overflow-hidden rounded-lg md:w-5/12">
         <div className="relative">
           <Image
             src={'/static/images/hero-blurb.png'}
