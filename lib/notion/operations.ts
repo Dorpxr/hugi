@@ -10,9 +10,10 @@ export function dateSortDesc(a, b) {
   return 0
 }
 
-export async function getDatabase(id: string): Promise<RecipesDatabase[]> {
+export async function getDatabase(id: string, filter?: any): Promise<RecipesDatabase[]> {
   const response = await notionClient.databases.query({
     database_id: id,
+    filter,
   })
   const results = response.results as RecipesDatabase[]
   if (process.env.DEBUG === 'true') {
