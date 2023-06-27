@@ -1,8 +1,10 @@
 import { analyticsDataClient } from '../google/client'
 import { PopularRecipes } from './interfaces/popular-recipes.interface'
-import { getPage, pageToMetaData } from '../notion/operations'
+import { getDatabase, pageToMetaData } from '../notion/operations'
 import { PageMetaData } from './interfaces/recipe-metadata.interface'
 import siteMetadata from '@/data/siteMetadata'
+import { databaseId } from '../notion/client'
+import fs from 'fs'
 
 export async function getPopularRecipes(): Promise<PageMetaData[]> {
   try {
@@ -41,14 +43,27 @@ export async function getPopularRecipes(): Promise<PageMetaData[]> {
       }
     }
 
+    if (process.env.DEBUG === 'true') {
+      fs.writeFileSync('mocks/popularRecipes.json', JSON.stringify(unrankedRecipes, null, 2))
+    }
+
     const unrankedRecipesPosts: PageMetaData[] = []
+    const orFilter = unrankedRecipes.map((recipe) => ({
+      property: 'Post',
+      title: {
+        contains: recipe.slug.toString().split('/')[2].split('-').slice(0, -1).join(' '),
+      },
+    }))
+    const recipes = await getDatabase(databaseId, {
+      or: orFilter,
+    })
     for (const recipe of unrankedRecipes) {
-      const page = await getPage(recipe.pageId)
-      const metaData = await pageToMetaData(recipe.slug, page)
+      const filterRecipes = recipes.find((page) => page.id.replaceAll('-', '') === recipe.pageId)
+      const metaData = await pageToMetaData(recipe.slug, filterRecipes)
       unrankedRecipesPosts.push(metaData)
     }
     return unrankedRecipesPosts
   } catch (err) {
-    throw Error('Could not retrieve popular recipes')
+    throw Error(err)
   }
 }
