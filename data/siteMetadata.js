@@ -9,7 +9,7 @@ const siteMetadata = {
   siteRepo: 'https://github.com/timlrx/tailwind-nextjs-starter-blog',
   siteLogo: '/static/images/logo.svg',
   image: '/static/images/avatar.png',
-  socialBanner: '/static/images/banner.jpeg',
+  socialBanner: '/static/images/banner.png',
   email: 'askryd13@gmail.com',
   github: 'https://github.com',
   twitter: 'https://twitter.com/Twitter',
