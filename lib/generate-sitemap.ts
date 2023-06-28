@@ -4,17 +4,17 @@ import { getDatabase } from './notion/operations'
 import { getAllTags } from './tags'
 
 export const generateSitemap = async () => {
-  const pages = ['/', '/recipes', '/about']
+  const pages = ['/', '/stories', '/about']
   const recipes = await getDatabase(databaseId)
   const tags = await getAllTags()
 
   recipes.forEach((recipe) => {
-    const slug = recipe.properties.Post.title.map(
+    const slug = recipe.properties.Story.title.map(
       (slug) => slug.plain_text.replace(/ /g, '-') + '-' + recipe.id.replaceAll('-', '')
     )
     const status = recipe.properties.Status.status.name
     if (status !== 'Draft') {
-      pages.push('/recipes/' + slug[0])
+      pages.push('/stories/' + slug[0])
     }
   })
 
