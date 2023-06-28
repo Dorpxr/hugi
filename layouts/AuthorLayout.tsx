@@ -2,7 +2,7 @@ import React from 'react'
 import SocialIcon from '@/components/social-icons'
 import Image from '@/components/Image'
 import { PageSEO } from '@/components/SEO'
-import { Author } from '@/lib/types/author.interface'
+import { Author } from '@/lib/author/interfaces/author.interface'
 
 type Props = {
   children: React.ReactNode

@@ -6,7 +6,7 @@ import CustomLink from './Link'
 import TOCInline from './TOCInline'
 import Pre from './Pre'
 import { BlogNewsletterForm } from './NewsletterForm'
-import { Author } from '@/lib/types/author.interface'
+import { Author } from '@/lib/author/interfaces/author.interface'
 import { PageMetaData } from '@/lib/recipes/interfaces/recipe-metadata.interface'
 
 export const MDXComponents = {

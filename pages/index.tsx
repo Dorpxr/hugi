@@ -18,8 +18,11 @@ type Props = {
 
 export const getServerSideProps: GetServerSideProps<Props> = async ({ res }) => {
   res.setHeader('Cache-Control', 'public, s-maxage=3300, stale-while-revalidate=3300')
-  const latestRecipes = await getAllPostsFrontMatter(databaseId)
-  const popularRecipes = await getPopularRecipes()
+
+  const [latestRecipes, popularRecipes] = await Promise.all([
+    getAllPostsFrontMatter(databaseId),
+    getPopularRecipes(),
+  ])
 
   return { props: { latestRecipes, popularRecipes } }
 }

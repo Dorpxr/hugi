@@ -1,5 +1,5 @@
 import React from 'react'
-import { Author } from '@/lib/types/author.interface'
+import { Author } from '@/lib/author/interfaces/author.interface'
 import Link from '@/components/Link'
 import PageTitle from '@/components/PageTitle'
 import SectionContainer from '@/components/SectionContainer'

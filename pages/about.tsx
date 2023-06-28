@@ -2,7 +2,7 @@ import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import path from 'path'
 import { readFileSync } from 'fs'
 import { MDXLayoutRenderer } from '@/components/MDXComponents'
-import { Author } from '@/lib/types/author.interface'
+import { Author } from '@/lib/author/interfaces/author.interface'
 import { processContent } from '@/lib/mdx'
 
 const DEFAULT_LAYOUT = 'AuthorLayout'
