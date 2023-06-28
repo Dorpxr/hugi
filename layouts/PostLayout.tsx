@@ -122,7 +122,7 @@ export default function PostLayout({
                   href="/recipes"
                   className="text-primary-700 hover:text-primary-600 dark:hover:text-primary-300"
                 >
-                  &larr; Back to recipes
+                  &larr; Back to stories
                 </Link>
               </div>
             </footer>
