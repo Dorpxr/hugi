@@ -119,7 +119,7 @@ export default function PostLayout({
               </div>
               <div className="pt-4 xl:pt-8">
                 <Link
-                  href="/recipes"
+                  href="/stories"
                   className="text-primary-700 hover:text-primary-600 dark:hover:text-primary-300"
                 >
                   &larr; Back to stories
