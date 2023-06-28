@@ -14,12 +14,14 @@ type Props = {
 
 const Card = ({ title, imgSrc, href, tags, time }: Props) => (
   <div className="overflow-hidden rounded-lg">
-    <div className="relative">
-      <Image src={imgSrc} width={960} height={540} alt={title} />
-    </div>
+    <Link href={href}>
+      <div className="relative">
+        <Image src={imgSrc} width={960} height={540} alt={title} />
+      </div>
+    </Link>
     <div className="flex h-24 flex-col justify-between pb-2 dark:border-gray-600">
       <h3 className="text-base font-bold md:text-lg">
-        <Link href={`${href}`} className="text-gray-900 dark:text-gray-100">
+        <Link href={href} className="text-gray-900 dark:text-gray-100">
           {title}
         </Link>
       </h3>
