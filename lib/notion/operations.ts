@@ -22,11 +22,11 @@ export async function getDatabase(id: string, filter?: any): Promise<RecipesData
   return results
 }
 
-export async function getPage(id: string): Promise<RecipePage> {
+export async function getPage(id: string): Promise<RecipesDatabase> {
   const response = await notionClient.pages.retrieve({
     page_id: id,
   })
-  const results = response as RecipePage
+  const results = response as RecipesDatabase
   if (process.env.DEBUG === 'true') {
     fs.writeFileSync('mocks/recipesPage.json', JSON.stringify(results, null, 2))
   }
