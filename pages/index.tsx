@@ -65,14 +65,14 @@ InferGetServerSidePropsType<typeof getServerSideProps>) {
                 className="text-primary-600 hover:text-primary-600 dark:hover:text-primary-400"
                 aria-label="all posts"
               >
-                All Recipes &rarr;
+                All Stories &rarr;
               </Link>
             </div>
           )}
         </div>
         <div>
           <ul className="flex overflow-x-scroll pt-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:overflow-x-auto">
-            {!latestStories?.length && 'No latest recipes found.'}
+            {!latestStories?.length && 'No latest stories found.'}
             {latestStories?.slice(0, MAX_DISPLAY).map((post) => {
               const { slug, title, featureImage, tags } = post
               return (
