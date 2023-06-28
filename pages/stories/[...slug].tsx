@@ -32,13 +32,10 @@ export default function Recipe({
   tags,
   createdAt,
   status,
-  cookTime,
-  prepTime,
-  totalTime,
   summary,
   featureImage,
   lastModifiedAt,
-  servings,
+  featured,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <>
@@ -53,12 +50,9 @@ export default function Recipe({
             title,
             tags,
             status,
-            cookTime,
-            prepTime,
-            totalTime,
             summary,
             featureImage,
-            servings,
+            featured,
           }}
           authorDetails={authorDetails}
         />

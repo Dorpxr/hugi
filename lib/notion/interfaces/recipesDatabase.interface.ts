@@ -25,30 +25,12 @@ export interface Parent {
 }
 
 export interface Properties {
-  Summary: Summary
-  Status: Status
   FeatureImage: FeatureImage
-  CookTime: CookTime
+  Status: Status
+  Summary: Summary
+  Featured: Featured
   Tags: Tags
-  Servings: CookTime
-  PrepTime: CookTime
-  Post: Post
-}
-
-export interface CookTime {
-  id: ID
-  type: Type
-  number: number | null
-}
-
-export enum ID {
-  AhCV = 'ahCV',
-  C3Dv = '~C%3Dv',
-  S6060S = 's%60%60S',
-}
-
-export enum Type {
-  Number = 'number',
+  Story: Story
 }
 
 export interface FeatureImage {
@@ -68,7 +50,25 @@ export interface FileFile {
   expiry_time: string
 }
 
-export interface Post {
+export interface Featured {
+  id: string
+  type: string
+  checkbox: boolean
+}
+
+export interface Status {
+  id: string
+  type: string
+  status: StatusElement
+}
+
+export interface StatusElement {
+  id: string
+  name: string
+  color: string
+}
+
+export interface Story {
   id: string
   type: string
   title: Title[]
@@ -94,18 +94,6 @@ export interface Annotations {
 export interface Text {
   content: string
   link: null
-}
-
-export interface Status {
-  id: string
-  type: string
-  status: StatusElement
-}
-
-export interface StatusElement {
-  id: string
-  name: string
-  color: string
 }
 
 export interface Summary {

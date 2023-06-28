@@ -41,7 +41,7 @@ export async function getAllPostsFrontMatter(databaseId: string): Promise<PageMe
   for (const page of database) {
     if (page.properties.Status.status.name !== 'Draft') {
       const slug =
-        page.properties.Post.title[0].plain_text.replace(/ /g, '-') +
+        page.properties.Story.title[0].plain_text.replace(/ /g, '-') +
         '-' +
         page.id.replaceAll('-', '')
       const metaData = pageToMetaData(slug, page)
@@ -56,7 +56,7 @@ export async function getAllPostsFrontMatter(databaseId: string): Promise<PageMe
   return sortedFrontMatter
 }
 
-export function pageToMetaData(slug: string, page: RecipePage): PageMetaData {
+export function pageToMetaData(slug: string, page: RecipesDatabase): PageMetaData {
   let title = slug.toString().split('-').slice(0, -1).join(' ')
   if (slug.includes('/recipes/')) {
     title = slug.toString().split('/')[2].split('-').slice(0, -1).join(' ')
@@ -68,12 +68,9 @@ export function pageToMetaData(slug: string, page: RecipePage): PageMetaData {
     tags: page.properties.Tags.multi_select.map((tag) => tag.name),
     createdAt: page.created_time.split('T')[0].toString(),
     status: page.properties.Status.status.name,
-    cookTime: page.properties.CookTime.number,
-    prepTime: page.properties.PrepTime.number,
-    totalTime: page.properties.CookTime.number + page.properties.PrepTime.number,
     summary: page.properties.Summary.rich_text[0].text.content,
     featureImage: page.properties?.FeatureImage?.files[0]?.file?.url ?? '/static/banner.jpeg',
     lastModifiedAt: page.last_edited_time.split('T')[0].toString(),
-    servings: page.properties.Servings.number,
+    featured: page.properties.Featured.checkbox,
   }
 }

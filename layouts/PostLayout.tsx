@@ -9,7 +9,6 @@ import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
 import { PageMetaData } from '@/lib/recipes/interfaces/recipe-metadata.interface'
-import { RecipeDataDisplay } from '@/components/RecipeDataDisplay'
 
 const postDateTemplate: Intl.DateTimeFormatOptions = {
   weekday: 'long',
@@ -25,19 +24,7 @@ interface Props {
 }
 
 export default function PostLayout({
-  pageMetaData: {
-    slug,
-    createdAt,
-    title,
-    tags,
-    summary,
-    featureImage,
-    lastModifiedAt,
-    prepTime,
-    cookTime,
-    totalTime,
-    servings,
-  },
+  pageMetaData: { slug, createdAt, title, tags, summary, featureImage, lastModifiedAt },
   authorDetails,
   children,
 }: Props) {
@@ -62,12 +49,9 @@ export default function PostLayout({
               </div>
             </div>
           </header>
-          <div
-            className="divide-y divide-y-0 pb-8 xl:grid xl:grid-cols-4 xl:gap-x-6 xl:divide-gray-200 xl:dark:divide-gray-700"
-            style={{ gridTemplateRows: 'auto 1fr' }}
-          >
+          <div className="mx-auto flex max-w-xl flex-col divide-y divide-y-0 pb-8">
             <dl className="pt-6 pb-10 xl:border-b xl:border-gray-300 xl:pt-0 xl:pb-6 xl:pt-0 xl:dark:border-gray-700">
-              <dt className="sr-only">Authors</dt>
+              {/* <dt className="sr-only">Authors</dt>
               <dd>
                 <ul className="flex justify-center space-x-8 sm:space-x-12 xl:block xl:space-x-0 xl:space-y-8">
                   {authorDetails.map((author) => (
@@ -89,8 +73,8 @@ export default function PostLayout({
                     </li>
                   ))}
                 </ul>
-              </dd>
-              <div className="flex  justify-center pt-8 xl:flex-col xl:justify-between">
+              </dd> */}
+              {/* <div className="flex  justify-center pt-8 xl:flex-col xl:justify-between">
                 <div className="hidden xl:block xl:pb-6">
                   <dt className="text-center text-sm xl:text-left">Published on</dt>
                   <dd className="pr-1 text-sm font-medium leading-6 text-gray-500 dark:text-gray-400 sm:pr-0 sm:text-base">
@@ -113,18 +97,12 @@ export default function PostLayout({
                     </time>
                   </dd>
                 </div>
-              </div>
+              </div> */}
             </dl>
-            <div className="xl:col-span-3 xl:row-span-2 xl:pb-0">
+            <div className="flex flex-col items-center justify-center xl:col-span-3 xl:row-span-2 xl:pb-0">
               <div className="relative">
                 <Image src={featureImage} width={960} height={540} alt={title} />
               </div>
-              <RecipeDataDisplay
-                prepTime={prepTime}
-                cookTime={cookTime}
-                totalTime={totalTime}
-                servings={servings}
-              />
               <div className="prose max-w-none pt-10 pb-8 dark:prose-dark">{children}</div>
             </div>
             <footer>

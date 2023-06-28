@@ -33,10 +33,10 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
           </h1>
           <div className="relative max-w-lg">
             <input
-              aria-label="Search recipes"
+              aria-label="Search stories"
               type="text"
               onChange={(e) => setSearchValue(e.target.value)}
-              placeholder="Search recipes"
+              placeholder="Search stories"
               className="block w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-900 dark:bg-gray-800 dark:text-gray-100"
             />
             <svg
@@ -58,17 +58,11 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
         <ul className="grid grid-cols-1 gap-4 pt-6 md:grid-cols-3">
           {!filteredBlogPosts.length && 'No recipes found.'}
           {displayPosts.map((post) => {
-            const { slug, title, tags, featureImage, totalTime } = post
+            const { slug, title, tags, featureImage } = post
             return (
               <li key={slug} className="w-full">
                 <article className="h-full">
-                  <Card
-                    title={title}
-                    imgSrc={featureImage}
-                    href={`/recipes/${slug}`}
-                    tags={tags}
-                    time={totalTime}
-                  />
+                  <Card title={title} imgSrc={featureImage} href={`/stories/${slug}`} tags={tags} />
                 </article>
               </li>
             )

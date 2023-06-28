@@ -1,8 +1,8 @@
 const siteMetadata = {
-  title: 'Healthy-ish',
-  author: 'Anna Skryd',
-  headerTitle: 'Healthy-ish',
-  description: 'Food and Recipes from Healthy-ish',
+  title: 'Hugi',
+  author: 'Hugi',
+  headerTitle: 'Hugi',
+  description: 'Compelling Stories',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://www.healthy-ish.app',

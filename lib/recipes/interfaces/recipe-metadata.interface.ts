@@ -7,8 +7,5 @@ export interface PageMetaData {
   slug: string
   summary: string
   featureImage: string
-  cookTime: number
-  prepTime: number
-  totalTime: number
-  servings: number
+  featured: boolean
 }

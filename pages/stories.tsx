@@ -36,12 +36,12 @@ export default function Recipes({
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <>
-      <PageSEO title={`Recipes - ${siteMetadata.author}`} description={siteMetadata.description} />
+      <PageSEO title={`Stories`} description={siteMetadata.description} />
       <ListLayout
         posts={posts}
         initialDisplayPosts={initialDisplayPosts}
         pagination={pagination}
-        title="All Recipes"
+        title="All Stories"
       />
     </>
   )

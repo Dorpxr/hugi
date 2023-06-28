@@ -32,7 +32,7 @@ module.exports = {
         fancy: ['Pattaya', 'sans-serif'],
       },
       colors: {
-        primary: colors.emerald,
+        primary: colors.indigo,
         gray: colors.neutral,
       },
       typography: (theme) => ({
