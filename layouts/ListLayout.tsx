@@ -56,7 +56,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
           </div>
         </div>
         <ul className="grid grid-cols-1 gap-4 pt-6 md:grid-cols-3">
-          {!filteredBlogPosts.length && 'No recipes found.'}
+          {!filteredBlogPosts.length && 'No stories found.'}
           {displayPosts.map((post) => {
             const { slug, title, tags, featureImage } = post
             return (

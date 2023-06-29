@@ -39,7 +39,7 @@ export async function getAllPostsFrontMatter(databaseId: string): Promise<PageMe
   const allFrontMatter: PageMetaData[] = []
 
   for (const page of database) {
-    if (page.properties.Status.status.name !== 'Draft') {
+    if (page.properties.Status.status.name === 'Done') {
       const slug =
         page.properties.Story.title[0].plain_text.replace(/ /g, '-') +
         '-' +

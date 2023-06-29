@@ -7,7 +7,7 @@ export async function getAllTags() {
   let tagCount = {}
   // Iterate through each post, putting all found tags into `tags`
   posts.forEach((post) => {
-    if (post.tags && post.status !== 'Draft') {
+    if (post.tags && post.status === 'Done') {
       post.tags.forEach((tag) => {
         const formattedTag = kebabCase(tag)
         if (formattedTag in tagCount) {

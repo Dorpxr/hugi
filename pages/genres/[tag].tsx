@@ -10,7 +10,7 @@ export async function getServerSideProps({ params, res }) {
   res.setHeader('Cache-Control', 'public, s-maxage=3300, stale-while-revalidate=3300')
   const allPosts = await getAllPostsFrontMatter(databaseId)
   const filteredPosts = allPosts.filter(
-    (post) => post.status !== 'Draft' && post.tags.map((t) => kebabCase(t)).includes(params.tag)
+    (post) => post.status === 'Done' && post.tags.map((t) => kebabCase(t)).includes(params.tag)
   )
 
   // TODO: do this in a feed.xml.tsx file and SSR it

@@ -6,7 +6,7 @@ import { getAllPostsFrontMatter } from '@/lib/notion/operations'
 import { databaseId } from '@/lib/notion/client'
 import { PageMetaData } from '@/lib/recipes/interfaces/recipe-metadata.interface'
 
-export const POSTS_PER_PAGE = 5
+export const POSTS_PER_PAGE = 6
 
 type Props = {
   posts: PageMetaData[]

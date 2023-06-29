@@ -39,7 +39,7 @@ export default function Recipe({
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <>
-      {status !== 'Draft' ? (
+      {status === 'Done' ? (
         <MDXLayoutRenderer
           layout={DEFAULT_LAYOUT}
           mdxSource={content}

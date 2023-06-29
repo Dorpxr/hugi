@@ -13,7 +13,7 @@ export const generateSitemap = async () => {
       (slug) => slug.plain_text.replace(/ /g, '-') + '-' + recipe.id.replaceAll('-', '')
     )
     const status = recipe.properties.Status.status.name
-    if (status !== 'Draft') {
+    if (status === 'Done') {
       pages.push('/stories/' + slug[0])
     }
   })
