@@ -6,6 +6,8 @@ import SectionContainer from './SectionContainer'
 import Footer from './Footer'
 import MobileNav from './MobileNav'
 import ThemeSwitch from './ThemeSwitch'
+import { TopNavLink } from './TopNavLink'
+import { subLinks } from '@/data/headerSubnavLinks'
 
 const LayoutWrapper = ({ children }) => {
   return (
@@ -18,27 +20,25 @@ const LayoutWrapper = ({ children }) => {
                 <div className="mr-3">
                   <Logo />
                 </div>
-                {/* {typeof siteMetadata.headerTitle === 'string' ? (
-                  <div className="hidden h-6 font-fancy text-2xl font-semibold tracking-wider text-gray-900 subpixel-antialiased dark:text-gray-100 sm:block">
-                    {siteMetadata.headerTitle}
-                  </div>
-                ) : (
-                  siteMetadata.headerTitle
-                )} */}
               </div>
             </Link>
           </div>
           <div className="flex items-center text-base leading-5">
             <div className="hidden sm:block">
-              {headerNavLinks.map((link) => (
-                <Link
-                  key={link.title}
-                  href={link.href}
-                  className="p-1 font-medium text-gray-900 dark:text-gray-100 sm:p-4"
-                >
-                  {link.title}
-                </Link>
-              ))}
+              <nav>
+                <ul className="flex">
+                  {headerNavLinks.map((link) => (
+                    <TopNavLink
+                      key={link.href}
+                      text={link.title}
+                      href={link.href}
+                      subLinks={
+                        subLinks.find((links) => links.key === link.title)?.subLinks ?? null
+                      }
+                    />
+                  ))}
+                </ul>
+              </nav>
             </div>
             <ThemeSwitch />
             <MobileNav />
