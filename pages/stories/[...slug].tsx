@@ -2,7 +2,7 @@ import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
 import PageTitle from '@/components/PageTitle'
 import { MDXLayoutRenderer } from '@/components/MDXComponents'
 import { getAuthorDetails } from '@/lib/author/details'
-import { parseRecipePage } from '@/lib/recipes/parse-page'
+import { parseStoryPage } from '@/lib/stories/parse-page'
 
 const DEFAULT_LAYOUT = 'PostLayout'
 
@@ -10,7 +10,7 @@ export const getServerSideProps: GetServerSideProps = async ({ params: { slug },
   res.setHeader('Cache-Control', 'public, s-maxage=3300, stale-while-revalidate=3300')
   const pageId = slug.toString().split('-').pop()
   const [parsedPage, authorDetails] = await Promise.all([
-    parseRecipePage(pageId, slug[0]),
+    parseStoryPage(pageId, slug[0]),
     getAuthorDetails(),
   ])
   const { content, pageMetaData } = parsedPage

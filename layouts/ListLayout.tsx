@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Pagination from '@/components/Pagination'
-import { PageMetaData } from '@/lib/recipes/interfaces/recipe-metadata.interface'
+import { PageMetaData } from '@/lib/stories/interfaces/page-metadata.interface'
 import Card from '@/components/Card'
 
 interface Props {

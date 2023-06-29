@@ -8,7 +8,7 @@ import Image from 'next/image'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
-import { PageMetaData } from '@/lib/recipes/interfaces/recipe-metadata.interface'
+import { PageMetaData } from '@/lib/stories/interfaces/page-metadata.interface'
 
 const postDateTemplate: Intl.DateTimeFormatOptions = {
   weekday: 'long',

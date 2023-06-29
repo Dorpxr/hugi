@@ -1,4 +1,4 @@
-export interface RecipesDatabase {
+export interface StoriesDatabase {
   object: string
   id: string
   created_time: string

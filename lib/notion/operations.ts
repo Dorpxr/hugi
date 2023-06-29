@@ -1,8 +1,7 @@
-import { RecipesDatabase } from '@/lib/notion/interfaces/recipesDatabase.interface'
-import { RecipePage } from '@/lib/notion/interfaces/recipePage.interface'
+import { StoriesDatabase } from '@/lib/notion/interfaces/storiesDatabase.interface'
 import { notionClient } from './client'
 import fs from 'fs'
-import { PageMetaData } from '../recipes/interfaces/recipe-metadata.interface'
+import { PageMetaData } from '../stories/interfaces/page-metadata.interface'
 
 export function dateSortDesc(a, b) {
   if (a > b) return -1
@@ -10,25 +9,25 @@ export function dateSortDesc(a, b) {
   return 0
 }
 
-export async function getDatabase(id: string, filter?: any): Promise<RecipesDatabase[]> {
+export async function getDatabase(id: string, filter?: any): Promise<StoriesDatabase[]> {
   const response = await notionClient.databases.query({
     database_id: id,
     filter,
   })
-  const results = response.results as RecipesDatabase[]
+  const results = response.results as StoriesDatabase[]
   if (process.env.DEBUG === 'true') {
-    fs.writeFileSync('mocks/recipesDatabase.json', JSON.stringify(results, null, 2)) // write data to file for debugging
+    fs.writeFileSync('mocks/storiesDatabase.json', JSON.stringify(results, null, 2)) // write data to file for debugging
   }
   return results
 }
 
-export async function getPage(id: string): Promise<RecipesDatabase> {
+export async function getPage(id: string): Promise<StoriesDatabase> {
   const response = await notionClient.pages.retrieve({
     page_id: id,
   })
-  const results = response as RecipesDatabase
+  const results = response as StoriesDatabase
   if (process.env.DEBUG === 'true') {
-    fs.writeFileSync('mocks/recipesPage.json', JSON.stringify(results, null, 2))
+    fs.writeFileSync('mocks/storiesPage.json', JSON.stringify(results, null, 2))
   }
   return results
 }
@@ -51,12 +50,12 @@ export async function getAllPostsFrontMatter(databaseId: string): Promise<PageMe
 
   const sortedFrontMatter = allFrontMatter.sort((a, b) => dateSortDesc(a.createdAt, b.createdAt))
   if (process.env.DEBUG === 'true') {
-    fs.writeFileSync('mocks/recipesFrontMatter.json', JSON.stringify(sortedFrontMatter, null, 2))
+    fs.writeFileSync('mocks/storiesFrontMatter.json', JSON.stringify(sortedFrontMatter, null, 2))
   }
   return sortedFrontMatter
 }
 
-export function pageToMetaData(slug: string, page: RecipesDatabase): PageMetaData {
+export function pageToMetaData(slug: string, page: StoriesDatabase): PageMetaData {
   let title = slug.toString().split('-').slice(0, -1).join(' ')
   if (slug.includes('/recipes/')) {
     title = slug.toString().split('/')[2].split('-').slice(0, -1).join(' ')

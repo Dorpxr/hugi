@@ -5,7 +5,7 @@ import { getPage, pageToMetaData } from '../notion/operations'
 
 const n2m = new NotionToMarkdown({ notionClient })
 
-export const parseRecipePage = async (pageId: string, slug: string) => {
+export const parseStoryPage = async (pageId: string, slug: string) => {
   const page = await getPage(pageId)
   const content = await n2m.pageToMarkdown(pageId)
   const contentString = await n2m.toMarkdownString(content)

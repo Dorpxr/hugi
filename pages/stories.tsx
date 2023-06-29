@@ -4,7 +4,7 @@ import ListLayout from '@/layouts/ListLayout'
 import { PageSEO } from '@/components/SEO'
 import { getAllPostsFrontMatter } from '@/lib/notion/operations'
 import { databaseId } from '@/lib/notion/client'
-import { PageMetaData } from '@/lib/recipes/interfaces/recipe-metadata.interface'
+import { PageMetaData } from '@/lib/stories/interfaces/page-metadata.interface'
 
 export const POSTS_PER_PAGE = 6
 
