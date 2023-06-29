@@ -20,7 +20,7 @@ export const Featured = ({ image, title, summary, href }: Props) => {
       <div className="flex flex-col pt-3 md:flex-row">
         <div className="w-full overflow-hidden rounded-lg md:w-7/12">
           <div className="relative">
-            <Image src={image.src} width={960} height={540} alt={image.alt} />
+            <Image src={image.src} width={1024} height={1024} alt={image.alt} />
           </div>
         </div>
         <div className="w-full pt-6 md:w-5/12 md:pt-0 md:pl-16">

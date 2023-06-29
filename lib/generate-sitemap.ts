@@ -18,7 +18,7 @@ export const generateSitemap = async () => {
     }
   })
 
-  Object.keys(tags).forEach((tag) => pages.push('/tags/' + tag))
+  Object.keys(tags).forEach((tag) => pages.push('/genres/' + tag))
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
         <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -31,7 +31,7 @@ export const generateSitemap = async () => {
 
                 if (
                   page.search('pages/404.') > -1 ||
-                  page.search(`pages/recipes/[...slug].`) > -1
+                  page.search(`pages/stories/[...slug].`) > -1
                 ) {
                   return
                 }

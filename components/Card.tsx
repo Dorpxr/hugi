@@ -15,7 +15,7 @@ const Card = ({ title, imgSrc, href, tags }: Props) => (
   <div className="overflow-hidden rounded-lg">
     <Link href={href}>
       <div className="relative">
-        <Image src={imgSrc} width={960} height={540} alt={title} />
+        <Image src={imgSrc} width={1024} height={1024} alt={title} />
       </div>
     </Link>
     <div className="flex h-24 flex-col justify-between pb-2 dark:border-gray-600">

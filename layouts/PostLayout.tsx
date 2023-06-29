@@ -50,7 +50,7 @@ export default function PostLayout({
             </div>
           </header>
           <div className="mx-auto flex max-w-xl flex-col divide-y divide-y-0 pb-8">
-            <dl className="pt-6 pb-10 xl:border-b xl:border-gray-300 xl:pt-0 xl:pb-6 xl:pt-0 xl:dark:border-gray-700">
+            <dl className="pt-6 pb-10 xl:pt-0 xl:pb-6 xl:pt-0 xl:dark:border-gray-700">
               {/* <dt className="sr-only">Authors</dt>
               <dd>
                 <ul className="flex justify-center space-x-8 sm:space-x-12 xl:block xl:space-x-0 xl:space-y-8">
@@ -101,7 +101,7 @@ export default function PostLayout({
             </dl>
             <div className="flex flex-col items-center justify-center xl:col-span-3 xl:row-span-2 xl:pb-0">
               <div className="relative">
-                <Image src={featureImage} width={960} height={540} alt={title} />
+                <Image src={featureImage} width={1024} height={1024} alt={title} />
               </div>
               <div className="prose max-w-none pt-10 pb-8 dark:prose-dark">{children}</div>
             </div>
