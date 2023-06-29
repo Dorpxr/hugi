@@ -19,7 +19,7 @@ const siteMetadata = {
   instagram: 'https://instagram.com/annaskryddd?igshid=YmMyMTA2M2Y=',
   locale: 'en-US',
   analytics: {
-    googleAnalyticsId: 'G-BMJ5E4W9GX', // e.g. UA-000000-2 or G-XXXXXXX
+    googleAnalyticsId: 'G-QY4GR8881H', // e.g. UA-000000-2 or G-XXXXXXX
     googleAnalyticsPropertyId: '387411599',
   },
   newsletter: {
