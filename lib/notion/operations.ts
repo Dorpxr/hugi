@@ -9,10 +9,22 @@ export function dateSortDesc(a, b) {
   return 0
 }
 
-export async function getDatabase(id: string, filter?: any): Promise<StoriesDatabase[]> {
+export async function getDatabase(
+  id: string,
+  options?: {
+    filter?: any
+    sorts?: any[]
+    startCursor?: string
+    pageSize?: number
+  }
+): Promise<StoriesDatabase[]> {
+  const { filter, sorts, startCursor, pageSize } = options ?? {}
   const response = await notionClient.databases.query({
     database_id: id,
     filter,
+    sorts,
+    start_cursor: startCursor,
+    page_size: pageSize,
   })
   const results = response.results as StoriesDatabase[]
   if (process.env.DEBUG === 'true') {
@@ -72,4 +84,9 @@ export function pageToMetaData(slug: string, page: StoriesDatabase): PageMetaDat
     lastModifiedAt: page.last_edited_time.split('T')[0].toString(),
     featured: page.properties.Featured.checkbox,
   }
+}
+
+export function slugFromPage(page: StoriesDatabase, subPath?: string) {
+  const slug = '/' + page.url.toString().split('/')[2]
+  return subPath ? subPath + slug : slug
 }

@@ -29,6 +29,9 @@ export async function getPopularStories(): Promise<PageMetaData[]> {
     })
     const unrankedStories: PopularStories[] = []
     const rows = result[0].rows
+    if (process.env.DEBUG === 'true') {
+      fs.writeFileSync('mocks/unrankedStories.json', JSON.stringify(unrankedStories, null, 2))
+    }
     for (const row of rows) {
       if (row.dimensionValues[0].value.includes('/stories/')) {
         const views = row.metricValues[0].value
@@ -55,7 +58,7 @@ export async function getPopularStories(): Promise<PageMetaData[]> {
       },
     }))
     const recipes = await getDatabase(databaseId, {
-      or: orFilter,
+      filter: { or: orFilter },
     })
     for (const recipe of unrankedStories) {
       const filterRecipes = recipes.find((page) => page.id.replaceAll('-', '') === recipe.pageId)
