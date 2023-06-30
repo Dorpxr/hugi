@@ -18,7 +18,7 @@ const siteMetadata = {
     googleAnalyticsPropertyId: '391602666',
   },
   featureFlags: {
-    popularStoriesCarousel: false,
+    popularStoriesCarousel: true,
   },
 }
 

@@ -52,7 +52,7 @@ export async function getPopularStories(): Promise<PageMetaData[]> {
 
     const unrankedStoriesPosts: PageMetaData[] = []
     const orFilter = unrankedStories.map((recipe) => ({
-      property: 'Post',
+      property: 'Story',
       title: {
         contains: recipe.slug.toString().split('/')[2].split('-').slice(0, -1).join(' '),
       },
@@ -62,7 +62,7 @@ export async function getPopularStories(): Promise<PageMetaData[]> {
     })
     for (const recipe of unrankedStories) {
       const filterRecipes = recipes.find((page) => page.id.replaceAll('-', '') === recipe.pageId)
-      const metaData = await pageToMetaData(recipe.slug, filterRecipes)
+      const metaData = await pageToMetaData(recipe.slug.split('/')[2], filterRecipes)
       unrankedStoriesPosts.push(metaData)
     }
     return unrankedStoriesPosts
