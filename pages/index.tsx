@@ -99,7 +99,12 @@ export default function Home({
                 return (
                   <li key={slug} className="min-w-[70%] pr-4 sm:min-w-0 sm:pr-0 md:w-full">
                     <article className="h-full">
-                      <Card title={title} imgSrc={featureImage} href={`${slug}`} tags={tags} />
+                      <Card
+                        title={title}
+                        imgSrc={featureImage}
+                        href={`/stories/${slug}`}
+                        tags={tags}
+                      />
                     </article>
                   </li>
                 )
