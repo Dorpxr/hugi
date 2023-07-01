@@ -33,7 +33,8 @@ export async function getPopularStories(): Promise<PageMetaData[]> {
       fs.writeFileSync('mocks/unrankedStories.json', JSON.stringify(unrankedStories, null, 2))
     }
     for (const row of rows) {
-      if (row.dimensionValues[0].value.includes('/stories/')) {
+      const rowDimensionValue = row.dimensionValues[0].value
+      if (rowDimensionValue.includes('/stories/') && !rowDimensionValue.includes('/page/2')) {
         const views = row.metricValues[0].value
         const slug = row.dimensionValues[0].value
         const indexOfLastStoryPageSlugDelimeter = slug.lastIndexOf('-')
