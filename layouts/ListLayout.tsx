@@ -4,6 +4,7 @@ import { PageMetaData } from '@/lib/stories/interfaces/page-metadata.interface'
 import Card from '@/components/Card'
 import { useSearchFilters } from 'hooks/useSearchFilters'
 import { suggestedFilters } from '@/data/suggestedFilters'
+import { useSearch } from 'hooks/useSearch'
 
 interface Props {
   posts: PageMetaData[]
@@ -16,42 +17,11 @@ interface Props {
 }
 
 export default function ListLayout({ posts, title, initialDisplayPosts = [], pagination }: Props) {
-  const [searchValue, setSearchValue] = useState('')
-
   const { filters, updateFilter } = useSearchFilters(suggestedFilters)
 
-  const hasEnabledFilters = filters.filter((filter) => filter.isSelected)
-
-  const filteredBlogPosts = posts.filter((post) => {
-    const contentToSearch = {
-      text: post.title + post.summary + post.tags.join(' '),
-      filters: post.tags.join(' '),
-    }
-    const enabledFilters = filters.filter(({ isSelected }) => isSelected)
-    const filterSearchQuery = enabledFilters.map(({ filter }) =>
-      filter.replace('-', ' ').toLowerCase()
-    )
-    const searchQuery = searchValue
-    const textMatches = contentToSearch.text
-      .toLowerCase()
-      .includes(searchQuery.trim().toLowerCase())
-    const filterMatches = post.tags.filter((tag) => filterSearchQuery.includes(tag))
-    const hasTextMatch = textMatches && searchValue !== ''
-    const hasFilterMatch =
-      filterMatches.length === enabledFilters.length && enabledFilters.length > 0
-    if (hasFilterMatch && hasTextMatch) {
-      return true
-    }
-
-    if (hasFilterMatch && !searchValue) {
-      return true
-    }
-
-    if (hasTextMatch && hasEnabledFilters.length === 0) {
-      return true
-    }
-
-    return false
+  const { searchValue, setSearchValue, hasEnabledFilters, filteredBlogPosts } = useSearch({
+    filters,
+    posts,
   })
 
   const displayPosts =
