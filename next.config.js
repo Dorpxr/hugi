@@ -60,7 +60,7 @@ module.exports = withBundleAnalyzer({
   },
   images: {
     domains: ['s3.us-west-2.amazonaws.com', 'hugi-images.s3.amazonaws.com'],
-    minimumCacheTTL: 2700, // 45 minutes
+    minimumCacheTTL: 259200, // 72 hours
   },
 
   async headers() {
