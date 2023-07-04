@@ -59,8 +59,8 @@ module.exports = withBundleAnalyzer({
     dirs: ['pages', 'components', 'lib', 'layouts', 'scripts'],
   },
   images: {
-    domains: ['s3.us-west-2.amazonaws.com'],
-    minimumCacheTTL: 2700, // 45 minutes
+    domains: ['s3.us-west-2.amazonaws.com', 'hugi-images.s3.amazonaws.com'],
+    minimumCacheTTL: 259200, // 72 hours
   },
 
   async headers() {

@@ -5,8 +5,13 @@ import ListLayout from '@/layouts/ListLayout'
 import { POSTS_PER_PAGE } from '../../stories'
 import { databaseId } from '@/lib/notion/client'
 import { GetServerSideProps } from 'next'
+import { DEFAULT_CACHE_CONTROL } from '@/lib/constants'
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
+  context.res.setHeader(
+    'Cache-Control',
+    `public, s-maxage=${DEFAULT_CACHE_CONTROL.maxAge}, stale-while-revalidate=${DEFAULT_CACHE_CONTROL.swr}`
+  )
   const {
     params: { page },
   } = context

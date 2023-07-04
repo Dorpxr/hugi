@@ -73,6 +73,9 @@ export function pageToMetaData(slug: string, page: StoriesDatabase): PageMetaDat
     title = slug.toString().split('/')[2].split('-').slice(0, -1).join(' ')
   }
 
+  const featureImage =
+    page.properties?.FeatureImageUrl?.url ?? page.properties?.FeatureImage?.files[0]?.file?.url
+
   return {
     slug,
     title,
@@ -80,7 +83,7 @@ export function pageToMetaData(slug: string, page: StoriesDatabase): PageMetaDat
     createdAt: page.created_time.split('T')[0].toString(),
     status: page.properties.Status.status.name,
     summary: page.properties.Summary.rich_text[0].text.content,
-    featureImage: page.properties?.FeatureImage?.files[0]?.file?.url ?? '/static/banner.jpeg',
+    featureImage,
     lastModifiedAt: page.last_edited_time.split('T')[0].toString(),
     featured: page.properties.Featured.checkbox,
   }

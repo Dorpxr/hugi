@@ -5,6 +5,7 @@ import { PageSEO } from '@/components/SEO'
 import { getAllPostsFrontMatter } from '@/lib/notion/operations'
 import { databaseId } from '@/lib/notion/client'
 import { PageMetaData } from '@/lib/stories/interfaces/page-metadata.interface'
+import { DEFAULT_CACHE_CONTROL } from '@/lib/constants'
 
 export const POSTS_PER_PAGE = 6
 
@@ -18,7 +19,10 @@ type Props = {
 }
 
 export const getServerSideProps: GetServerSideProps<Props> = async ({ res }) => {
-  res.setHeader('Cache-Control', 'public, s-maxage=3300, stale-while-revalidate=3300')
+  res.setHeader(
+    'Cache-Control',
+    `public, s-maxage=${DEFAULT_CACHE_CONTROL.maxAge}, stale-while-revalidate=${DEFAULT_CACHE_CONTROL.swr}`
+  )
   const posts = await getAllPostsFrontMatter(databaseId)
   const initialDisplayPosts = posts.slice(0, POSTS_PER_PAGE)
   const pagination = {
