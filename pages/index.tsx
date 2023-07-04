@@ -9,6 +9,7 @@ import { PageMetaData } from '@/lib/stories/interfaces/page-metadata.interface'
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
 import { Featured } from '@/components/Featured'
 import { getPopularStories } from '@/lib/stories/popular'
+import { DEFAULT_CACHE_CONTROL } from '@/lib/constants'
 
 const MAX_DISPLAY = 3
 
@@ -19,7 +20,10 @@ type Props = {
 }
 
 export const getServerSideProps: GetServerSideProps<Props> = async ({ res }) => {
-  res.setHeader('Cache-Control', 'public, s-maxage=3300, stale-while-revalidate=3300')
+  res.setHeader(
+    'Cache-Control',
+    `public, s-maxage=${DEFAULT_CACHE_CONTROL.maxAge}, stale-while-revalidate=${DEFAULT_CACHE_CONTROL.swr}`
+  )
 
   const [latestRecipes, popularStories] = await Promise.all([
     getAllPostsFrontMatter(databaseId),

@@ -1,12 +1,16 @@
 import { TagSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
 import ListLayout from '@/layouts/ListLayout'
+import { DEFAULT_CACHE_CONTROL } from '@/lib/constants'
 import { databaseId } from '@/lib/notion/client'
 import { getAllPostsFrontMatter } from '@/lib/notion/operations'
 import kebabCase from '@/lib/utils/kebabCase'
 
 export async function getServerSideProps({ params, res }) {
-  res.setHeader('Cache-Control', 'public, s-maxage=3300, stale-while-revalidate=3300')
+  res.setHeader(
+    'Cache-Control',
+    `public, s-maxage=${DEFAULT_CACHE_CONTROL.maxAge}, stale-while-revalidate=${DEFAULT_CACHE_CONTROL.swr}`
+  )
   const allPosts = await getAllPostsFrontMatter(databaseId)
   const filteredPosts = allPosts.filter(
     (post) => post.status === 'Done' && post.tags.map((t) => kebabCase(t)).includes(params.tag)
