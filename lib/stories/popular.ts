@@ -5,6 +5,7 @@ import { PageMetaData } from './interfaces/page-metadata.interface'
 import siteMetadata from '@/data/siteMetadata'
 import { databaseId } from '../notion/client'
 import fs from 'fs'
+import { daysAgo } from '../utils/dayToDate'
 
 export async function getPopularStories(): Promise<PageMetaData[]> {
   try {
@@ -12,7 +13,7 @@ export async function getPopularStories(): Promise<PageMetaData[]> {
       property: `properties/${siteMetadata.analytics.googleAnalyticsPropertyId}`,
       dateRanges: [
         {
-          startDate: '2023-06-18',
+          startDate: daysAgo(siteMetadata.featureFlags.popularStoriesCarousel.dateRange),
           endDate: 'today',
         },
       ],

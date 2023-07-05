@@ -15,7 +15,10 @@ const siteMetadata = {
     googleAnalyticsPropertyId: '391602666',
   },
   featureFlags: {
-    popularStoriesCarousel: true,
+    popularStoriesCarousel: {
+      enabled: true,
+      dateRange: 28,
+    },
   },
   heroBlurb: {
     header: 'Welcome to Hugi.',
