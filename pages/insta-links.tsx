@@ -4,7 +4,7 @@ import { DEFAULT_CACHE_CONTROL } from '@/lib/constants'
 import { databaseId } from '@/lib/notion/client'
 import { getAllPostsFrontMatter } from '@/lib/notion/operations'
 import { PageMetaData } from '@/lib/stories/interfaces/page-metadata.interface'
-import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
+import { GetStaticProps, InferGetStaticPropsType } from 'next'
 
 export const POSTS_PER_PAGE = 15
 
@@ -16,11 +16,7 @@ type Props = {
   }
 }
 
-export const getServerSideProps: GetServerSideProps<Props> = async ({ res }) => {
-  res.setHeader(
-    'Cache-Control',
-    `public, s-maxage=${DEFAULT_CACHE_CONTROL.maxAge}, stale-while-revalidate=${DEFAULT_CACHE_CONTROL.swr}`
-  )
+export const getStaticProps: GetStaticProps<Props> = async () => {
   const posts = await getAllPostsFrontMatter(databaseId)
   const initialDisplayPosts = posts.slice(0, POSTS_PER_PAGE)
   const pagination = {
@@ -33,13 +29,14 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({ res }) => 
       initialDisplayPosts,
       pagination,
     },
+    revalidate: DEFAULT_CACHE_CONTROL['24'],
   }
 }
 
 export default function InstaLinks({
   initialDisplayPosts,
   pagination,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
       <PageSEO title={`Instagram Links`} description={`Instagram links to stories and poems`} />

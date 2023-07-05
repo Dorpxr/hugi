@@ -6,7 +6,7 @@ import { databaseId } from '@/lib/notion/client'
 import Card from '@/components/Card'
 import { HeroBlurb } from '@/components/HeroBlurb'
 import { PageMetaData } from '@/lib/stories/interfaces/page-metadata.interface'
-import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
+import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { Featured } from '@/components/Featured'
 import { getPopularStories } from '@/lib/stories/popular'
 import { DEFAULT_CACHE_CONTROL } from '@/lib/constants'
@@ -19,12 +19,7 @@ type Props = {
   popularStories: PageMetaData[]
 }
 
-export const getServerSideProps: GetServerSideProps<Props> = async ({ res }) => {
-  res.setHeader(
-    'Cache-Control',
-    `public, s-maxage=${DEFAULT_CACHE_CONTROL.maxAge}, stale-while-revalidate=${DEFAULT_CACHE_CONTROL.swr}`
-  )
-
+export const getStaticProps: GetStaticProps<Props> = async () => {
   const [latestRecipes, popularStories] = await Promise.all([
     getAllPostsFrontMatter(databaseId),
     getPopularStories(),
@@ -32,14 +27,17 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({ res }) => 
 
   const featuredStory = latestRecipes.find((story) => story.featured === true)
 
-  return { props: { latestStories: latestRecipes, featuredStory, popularStories } }
+  return {
+    props: { latestStories: latestRecipes, featuredStory, popularStories },
+    revalidate: DEFAULT_CACHE_CONTROL['24'],
+  }
 }
 
 export default function Home({
   latestStories,
   featuredStory,
   popularStories,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
