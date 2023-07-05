@@ -1,4 +1,5 @@
 export const DEFAULT_CACHE_CONTROL = {
-  maxAge: 259200,
-  swr: 259200,
+  '12': 43200,
+  '24': 86400,
+  '72': 259200,
 }

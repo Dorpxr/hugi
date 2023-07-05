@@ -1,17 +1,29 @@
-import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
+import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
 import PageTitle from '@/components/PageTitle'
 import { MDXLayoutRenderer } from '@/components/MDXComponents'
 import { getAuthorDetails } from '@/lib/author/details'
 import { parseStoryPage } from '@/lib/stories/parse-page'
-import { DEFAULT_CACHE_CONTROL } from '@/lib/constants'
+import { databaseId } from '@/lib/notion/client'
+import { getDatabase } from '@/lib/notion/operations'
 
 const DEFAULT_LAYOUT = 'PostLayout'
 
-export const getServerSideProps: GetServerSideProps = async ({ params: { slug }, res }) => {
-  res.setHeader(
-    'Cache-Control',
-    `public, s-maxage=${DEFAULT_CACHE_CONTROL.maxAge}, stale-while-revalidate=${DEFAULT_CACHE_CONTROL.swr}`
-  )
+export const getStaticPaths: GetStaticPaths = async () => {
+  const results = await getDatabase(databaseId)
+
+  return {
+    paths: results.map((page) => ({
+      params: {
+        slug: page.properties.Story.title.map(
+          (slug) => slug.plain_text.replace(/ /g, '-') + '-' + page.id.replaceAll('-', '')
+        ),
+      },
+    })),
+    fallback: false,
+  }
+}
+
+export const getStaticProps: GetStaticProps = async ({ params: { slug } }) => {
   const pageId = slug.toString().split('-').pop()
   const [parsedPage, authorDetails] = await Promise.all([
     parseStoryPage(pageId, slug[0]),
@@ -40,7 +52,7 @@ export default function Recipe({
   featureImage,
   lastModifiedAt,
   featured,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
       {status === 'Done' ? (
