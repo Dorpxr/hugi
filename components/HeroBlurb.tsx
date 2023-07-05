@@ -1,4 +1,4 @@
-import { heroBlurbText } from '@/data/hero-blurb'
+import siteMetadata from '@/data/siteMetadata'
 import Link from './Link'
 import Image from 'next/image'
 
@@ -16,8 +16,8 @@ export const HeroBlurb = () => {
         </div>
       </div>
       <div className="w-full pt-6 md:w-7/12 md:pt-0 md:pl-28">
-        <h2 className="pb-8 text-2xl font-bold">{heroBlurbText.header}</h2>
-        <p className="pb-8 text-sm">{heroBlurbText.body}</p>
+        <h2 className="pb-8 text-2xl font-bold">{siteMetadata.heroBlurb.header}</h2>
+        <p className="pb-8 text-sm">{siteMetadata.heroBlurb.body}</p>
         <Link href={`/stories`} className="font-bold text-primary-100 dark:text-primary-100">
           <div className="rounded-lg bg-indigo-700 p-4">{'Browse Stories ->'}</div>
         </Link>
