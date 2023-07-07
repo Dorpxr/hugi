@@ -63,8 +63,10 @@ export async function getPopularStories(): Promise<PageMetaData[]> {
     })
     for (const recipe of unrankedStories) {
       const filterRecipes = recipes.find((page) => page.id.replaceAll('-', '') === recipe.pageId)
-      const metaData = await pageToMetaData(recipe.slug.split('/')[2], filterRecipes)
-      unrankedStoriesPosts.push(metaData)
+      if (filterRecipes) {
+        const metaData = await pageToMetaData(filterRecipes)
+        unrankedStoriesPosts.push(metaData)
+      }
     }
     return unrankedStoriesPosts
   } catch (err) {

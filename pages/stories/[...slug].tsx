@@ -14,19 +14,17 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: results.map((page) => ({
       params: {
-        slug: page.properties.Story.title.map(
-          (slug) => slug.plain_text.replace(/ /g, '-') + '-' + page.id.replaceAll('-', '')
-        ),
+        slug: [page.url.replace('https://www.notion.so/', '')],
       },
     })),
-    fallback: false,
+    fallback: 'blocking',
   }
 }
 
 export const getStaticProps: GetStaticProps = async ({ params: { slug } }) => {
   const pageId = slug.toString().split('-').pop()
   const [parsedPage, authorDetails] = await Promise.all([
-    parseStoryPage(pageId, slug[0]),
+    parseStoryPage(pageId),
     getAuthorDetails(),
   ])
   const { content, pageMetaData } = parsedPage

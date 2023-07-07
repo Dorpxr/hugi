@@ -51,11 +51,7 @@ export async function getAllPostsFrontMatter(databaseId: string): Promise<PageMe
 
   for (const page of database) {
     if (page.properties.Status.status.name === 'Done') {
-      const slug =
-        page.properties.Story.title[0].plain_text.replace(/ /g, '-') +
-        '-' +
-        page.id.replaceAll('-', '')
-      const metaData = pageToMetaData(slug, page)
+      const metaData = pageToMetaData(page)
       allFrontMatter.push(metaData)
     }
   }
@@ -67,11 +63,9 @@ export async function getAllPostsFrontMatter(databaseId: string): Promise<PageMe
   return sortedFrontMatter
 }
 
-export function pageToMetaData(slug: string, page: StoriesDatabase): PageMetaData {
-  let title = slug.toString().split('-').slice(0, -1).join(' ')
-  if (slug.includes('/recipes/')) {
-    title = slug.toString().split('/')[2].split('-').slice(0, -1).join(' ')
-  }
+export function pageToMetaData(page: StoriesDatabase): PageMetaData {
+  const title = page.properties.Story.title[0].text.content
+  const slug = page.url.replace('https://www.notion.so/', '')
 
   const featureImage =
     page.properties?.FeatureImageUrl?.url ?? page.properties?.FeatureImage?.files[0]?.file?.url
