@@ -26,7 +26,7 @@ const Card = ({ title, imgSrc, href, tags, imageOnly }: Props) => (
         </h3>
         <div className="flex justify-between">
           <div className="flex flex-wrap">
-            {tags && tags.length > 0 && tags.map((tag) => <Tag key={tag} text={tag} />)}
+            {tags && tags.length > 0 && tags.slice(0, 2).map((tag) => <Tag key={tag} text={tag} />)}
           </div>
         </div>
       </div>
