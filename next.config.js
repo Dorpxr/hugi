@@ -11,7 +11,7 @@ const ContentSecurityPolicy = `
   media-src 'none';
   connect-src *;
   font-src 'self' fonts.gstatic.com;
-  frame-src giscus.app
+  frame-src 
 `
 
 const securityHeaders = [
@@ -59,7 +59,7 @@ module.exports = withBundleAnalyzer({
     dirs: ['pages', 'components', 'lib', 'layouts', 'scripts'],
   },
   images: {
-    domains: ['s3.us-west-2.amazonaws.com', 'hugi-images.s3.amazonaws.com'],
+    domains: ['hugi-images.s3.amazonaws.com'],
     minimumCacheTTL: 259200, // 72 hours
   },
 
@@ -71,7 +71,7 @@ module.exports = withBundleAnalyzer({
       },
     ]
   },
-  webpack: (config, { dev, isServer }) => {
+  webpack: (config) => {
     config.module.rules.push({
       test: /\.svg$/,
       use: ['@svgr/webpack'],
