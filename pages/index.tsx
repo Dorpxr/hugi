@@ -11,12 +11,14 @@ import { Featured } from '@/components/Featured'
 import { getPopularStories } from '@/lib/stories/popular'
 import { DEFAULT_CACHE_CONTROL } from '@/lib/constants'
 
+const POPULAR_CAROUSEL_ENABLED = siteMetadata.featureFlags.popularStoriesCarousel.enabled
+
 const MAX_DISPLAY = 3
 
 type Props = {
   latestStories: PageMetaData[]
   featuredStory: PageMetaData
-  popularStories: PageMetaData[]
+  popularStories?: PageMetaData[]
 }
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
@@ -89,7 +91,7 @@ export default function Home({
             })}
           </ul>
         </div>
-        {siteMetadata.featureFlags.popularStoriesCarousel.enabled ? (
+        {POPULAR_CAROUSEL_ENABLED ? (
           <div className="pt-12">
             <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 md:text-3xl md:leading-14">
               Most Popular

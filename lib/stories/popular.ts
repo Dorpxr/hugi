@@ -5,9 +5,13 @@ import { PageMetaData } from './interfaces/page-metadata.interface'
 import siteMetadata from '@/data/siteMetadata'
 import { databaseId } from '../notion/client'
 import fs from 'fs'
+const POPULAR_CAROUSEL_ENABLED = siteMetadata.featureFlags.popularStoriesCarousel.enabled
 
 export async function getPopularStories(): Promise<PageMetaData[]> {
   try {
+    if (!POPULAR_CAROUSEL_ENABLED) {
+      return []
+    }
     const result = await analyticsDataClient.runReport({
       property: `properties/${siteMetadata.analytics.googleAnalyticsPropertyId}`,
       dateRanges: [
