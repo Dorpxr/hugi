@@ -67,8 +67,7 @@ export function pageToMetaData(page: StoriesDatabase): PageMetaData {
   const title = page.properties.Story.title[0].text.content
   const slug = page.url.replace('https://www.notion.so/', '')
 
-  const featureImage =
-    page.properties?.FeatureImageUrl?.url ?? page.properties?.FeatureImage?.files[0]?.file?.url
+  const featureImage = page.properties?.FeatureImageUrl?.url ?? '/static/images/banner.png'
 
   return {
     slug,

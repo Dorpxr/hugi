@@ -37,7 +37,6 @@ export enum ParentType {
 }
 
 export interface Properties {
-  FeatureImage: FeatureImage
   FeatureImageUrl: FeatureImageURL
   Status: Status
   Summary: Summary
@@ -46,39 +45,10 @@ export interface Properties {
   Story: Story
 }
 
-export interface FeatureImage {
-  id: FeatureImageID
-  type: FeatureImageType
-  files: FileElement[]
-}
-
-export interface FileElement {
-  name: string
-  type: FileType
-  file: FileFile
-}
-
-export interface FileFile {
-  url: string
-  expiry_time: string
-}
-
-export enum FileType {
-  File = 'file',
-}
-
-export enum FeatureImageID {
-  The3DN60R = '%3DN%60R',
-}
-
-export enum FeatureImageType {
-  Files = 'files',
-}
-
 export interface FeatureImageURL {
   id: FeatureImageURLID
   type: FeatureImageURLType
-  url: null | string
+  url: string
 }
 
 export enum FeatureImageURLID {
