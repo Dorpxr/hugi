@@ -22,15 +22,15 @@ type Props = {
 }
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const [latestRecipes, popularStories] = await Promise.all([
+  const [latestStories, popularStories] = await Promise.all([
     getAllPostsFrontMatter(databaseId),
     getPopularStories(),
   ])
 
-  const featuredStory = latestRecipes.find((story) => story.featured === true)
+  const featuredStory = latestStories.find((story) => story.featured === true)
 
   return {
-    props: { latestStories: latestRecipes, featuredStory, popularStories },
+    props: { latestStories, featuredStory, popularStories },
     revalidate: DEFAULT_CACHE_CONTROL['24'],
   }
 }
