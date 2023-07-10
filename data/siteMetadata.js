@@ -17,7 +17,7 @@ const siteMetadata = {
   featureFlags: {
     popularStoriesCarousel: {
       enabled: true,
-      dateRange: 28,
+      dateRange: 90,
     },
   },
   heroBlurb: {
